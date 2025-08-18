@@ -1,0 +1,36 @@
+/* Container */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #4f5557;       /* dark background */
+    padding: 10px 20px;
+    border-radius: 50px;          /* pill shape */
+    border: 1px solid black;       /* subtle border */
+    width: fit-content;           /* shrink to content */
+    margin: 20px auto;            /* center horizontally */
+    box-shadow: 0 4px 8px rgba(16, 16, 16, 0.5); /* subtle shadow */
+  }
+  
+  /* Buttons (icons) */
+  .nav-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    color: #aaa;                  /* default icon color */
+    font-size: 20px;              /* adjust size */
+    transition: all 0.2s ease;
+  }
+  
+  .nav-btn:hover {
+    color: rgb(102, 250, 102);                  /* brighter on hover */
+  }
+  
+  /* Active button (highlighted) */
+  .nav-btn.active {
+    background: green;
+    color: white;
+  }
