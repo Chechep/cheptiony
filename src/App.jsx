@@ -1,11 +1,19 @@
-import React from 'react';
-import Header from './components/header'; // Import the Header component
+import React from "react";
+import "./index.css";
+import Header from "./components/header";
+import Profile from "./components/profile";
+import Skills from "./components/skills";
+import Services from "./components/services";
+import Contact from "./components/contact";
 
 const App = () => {
   return (
     <div className="App">
-      <Header /> {/* Use the Header component */}
-      {/* Add other components or content here */}
+      <Header />
+      <Profile />
+      <Services />
+      <Skills />
+      <Contact />
     </div>
   );
 };

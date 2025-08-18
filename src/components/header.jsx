@@ -13,6 +13,11 @@ export default function HeaderNav() {
   ];
 
   return (
+    <div>
+        <div className="header-title">
+            <h1>Hello, I'm Brian <span role="img" aria-label="wave">👋</span>
+            </h1>
+            </div>
     <div className="header-nav">
       {navItems.map((item) => (
         <button
@@ -25,5 +30,6 @@ export default function HeaderNav() {
         </button>
       ))}
     </div>
+        </div>
   );
 }

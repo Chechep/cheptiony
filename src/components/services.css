@@ -1,0 +1,52 @@
+/* Wrapper to center the services section */
+.services-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  background-color: #f9f9f9; /* Optional: Add a background color */
+}
+
+/* Services grid container */
+.services-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Service card styles */
+.service-card {
+  background-color: #1a1a1a;
+  color: #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid #333;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(37, 99, 235, 0); /* start with no glow */
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #2563eb;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.6); /* glowing effect */
+}
+
+.service-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #bbb;
+}
