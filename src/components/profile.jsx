@@ -2,7 +2,6 @@ import React from "react";
 import "./profile.css"; // Import CSS for styling
 
 const Profile = () => {
-
   return (
     <div className="profile-page">
       <div className="profile-header">
@@ -21,6 +20,13 @@ const Profile = () => {
           I am open to freelancing or full-time opportunities where I can
           contribute, grow, and make meaningful impact through technology.
         </p>
+
+        {/* Contact Button */}
+        <div className="contact-button-container">
+          <a href="#contact" className="contact-button">
+            Contact Me
+          </a>
+        </div>
       </div>
     </div>
   );

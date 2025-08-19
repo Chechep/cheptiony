@@ -1,20 +1,21 @@
 .contact-page {
     padding: 40px;
     text-align: center;
-    color: #ddd;
-    background-color: #111;
+    color: white;
+    background-color: rgba(107, 126, 51);
+    padding-bottom: 120px;
   }
   
   .contact-page h1 {
     font-size: 32px;
     margin-bottom: 10px;
-    color: #fff;
+    color: white;
   }
   
   .contact-page p {
     margin-bottom: 30px;
     font-size: 16px;
-    color: #bbb;
+    color: rgb(193, 220, 187);
   }
   
   .contact-methods {
@@ -23,16 +24,24 @@
     gap: 20px;
     flex-wrap: wrap;
   }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    display: flex;
+  }
   
   .contact-card {
-    background-color: #1a1a1a;
-    padding: 20px 30px;
+    background-color: rgba(107, 126, 51);
+    padding: 10px 30px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #ddd;
+    color: white;
     font-size: 16px;
     border: 1px solid #333;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -40,13 +49,12 @@
   
   .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px #2563eb;
-    color: #fff;
+    box-shadow: 0 0 15px rgb(47, 255, 0);
+    color: rgb(47, 255, 0);
   }
   
   .contact-icon {
     font-size: 28px;
     margin-bottom: 10px;
-    color: #2563eb;
+    color: white;
   }
-  

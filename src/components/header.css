@@ -4,24 +4,34 @@
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
     text-align: center;     /* Center text alignment */
+    padding-bottom: 0px;
   }
   
   .header-title h1 {
     font-size: 2.5rem; /* Adjust font size as needed */
-    color: #333;       /* Adjust text color */
+    color: white;       /* Adjust text color */
+    text-shadow: 4px 4px 9px rgb(0, 0, 0); /* Optional: add a shadow for better visibility */
+    margin: 0; /* Remove default margin */
   }
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background-color: #4f5557;       /* dark background */
-    padding: 10px 20px;
-    border-radius: 50px;          /* pill shape */
-    border: 1px solid black;       /* subtle border */
-    width: fit-content;           /* shrink to content */
-    margin: 20px auto;            /* center horizontally */
-    box-shadow: 0 4px 8px rgba(16, 16, 16, 0.5); /* subtle shadow */
+    gap: 50px;
+    background-color: rgba(107, 126, 51);
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 1px solid grey;
+    width: fit-content;
+    margin: 0 auto;                /* center horizontally */
+    box-shadow: 0 4px 8px black;
+  
+    /* 👇 new part to pin it at bottom */
+    position: fixed;
+    bottom: 10px;                  /* space from bottom */
+    left: 50%;
+    transform: translateX(-50%);   /* perfect center */
+    z-index: 1000;
   }
   
   /* Buttons (icons) */
@@ -32,17 +42,17 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
-    color: #aaa;                  /* default icon color */
-    font-size: 20px;              /* adjust size */
+    color: white;                  /* default icon color */
+    font-size: 40px;              /* adjust size */
     transition: all 0.2s ease;
   }
   
   .nav-btn:hover {
-    color: rgb(102, 250, 102);                  /* brighter on hover */
+    transform: translateY(-6px);
+    box-shadow: 0 0 40px rgb(225, 255, 0);
   }
-  
-  /* Active button (highlighted) */
+
   .nav-btn.active {
-    background: green;
+    background: rgb(192, 239, 49);
     color: white;
   }

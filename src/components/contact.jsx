@@ -1,28 +1,53 @@
 import React from "react";
 import "./contact.css";
-import { FaEnvelope, FaWhatsapp, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaWhatsapp, FaGithub, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="contact-page">
+    <div id="contact" className="contact-page">
       <h1>Contact Me</h1>
       <p>Let’s connect! You can reach me through the following platforms:</p>
 
       <div className="contact-methods">
-        <a href="mailto:cheptiony6@gmail.com" className="contact-card" target="_blank" rel="noopener noreferrer">
+
+        <div className="contact-card">
           <FaEnvelope className="contact-icon" />
-          <span>Email</span>
-        </a>
+          <p className="contact-detail">cheptiony6@gmail.com</p>
+          <a href="mailto:cheptiony6@gmail.com" target="_blank" rel="noopener noreferrer">
+            Email
+          </a>
+        </div>
 
-        <a href="https://wa.me/254790086093" className="contact-card" target="_blank" rel="noopener noreferrer">
+        <div className="contact-card">
+          <FaPhone className="contact-icon" />
+          <p className="contact-detail">+254 790 086 093</p>
+          <a href="tel:+254790086093">
+            Call
+          </a>
+        </div>
+
+        <div className="contact-card">
           <FaWhatsapp className="contact-icon" />
-          <span>WhatsApp</span>
-        </a>
+          <p className="contact-detail">+254 790 086 093</p>
+          <a href="https://wa.me/254790086093" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+        </div>
 
-        <a href="https://github.com/Chechep" className="contact-card" target="_blank" rel="noopener noreferrer">
+        <div className="contact-card">
           <FaGithub className="contact-icon" />
-          <span>GitHub</span>
-        </a>
+          <p className="contact-detail">github.com/Chechep</p>
+          <a href="https://github.com/Chechep" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+
+        <div className="contact-card">
+          <FaMapMarkerAlt className="contact-icon" />
+          <p className="contact-detail">Nairobi, Kenya</p>
+          <span>Location</span>
+        </div>
+
       </div>
     </div>
   );

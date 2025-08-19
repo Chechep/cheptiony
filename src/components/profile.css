@@ -1,17 +1,17 @@
 .profile-page {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: #eee;
-    background-color: #111;
+    color: rgb(193, 220, 187);
+    background-color: rgba(107, 126, 51);
     border-radius: 10px;
   }
   
   .profile-header h1 {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: #fff;
+    color:white;
     text-align: center;
   }
   
@@ -19,6 +19,24 @@
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 16px;
-    color: #ccc;
+    color: rgb(193, 220, 187);
+  }
+
+  .contact-button-container {
+    margin-top: 20px;
+    text-align: center;
   }
   
+  .contact-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: green;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+  .contact-button:hover {
+    background: rgb(12, 196, 12);
+  }
