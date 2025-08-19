@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center;    /* Center vertically */
-  background-color: rgba(107, 126, 51); /* Optional: Add a background color */
 }
 
 /* Services grid container */
@@ -13,6 +12,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 30px;
+  justify-content: center;
 }
 
 /* Service card styles */
@@ -55,4 +55,20 @@
   font-size: 2rem;
   color: black;
   margin-bottom: 20px;
+}
+
+/* Dark mode styles for services */
+body.dark-mode .services-container {
+  background-color: #1e1e1e; /* Dark background for services container */
+  color: #ffffff; /* Light text */
+}
+
+body.dark-mode .service-card {
+  background-color: #333; /* Dark background for service cards */
+  color: #ffffff; /* Light text for service cards */
+  border-color: #555; /* Darker border */
+}
+
+body.dark-mode .service-card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Subtle glow on hover */
 }

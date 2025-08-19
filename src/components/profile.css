@@ -40,3 +40,17 @@
   .contact-button:hover {
     background: rgb(12, 196, 12);
   }
+
+  /* Dark mode styles for profile */
+body.dark-mode .profile-page {
+  background-color: #1e1e1e; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+body.dark-mode .profile-header h1 {
+  color: #ffffff; /* Light text for header */
+}
+
+body.dark-mode .profile-content p {
+  color: #cccccc; /* Light text for paragraphs */
+}

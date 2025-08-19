@@ -3,6 +3,7 @@ import "./header.css";
 
 export default function HeaderNav() {
   const [active, setActive] = useState("profile");
+  const [darkMode, setDarkMode] = useState(false); // State for dark mode
 
   const navItems = [
     { id: "profile", icon: "👤", name: "Profile" },
@@ -20,12 +21,20 @@ export default function HeaderNav() {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-mode", !darkMode); // Add/remove dark mode class on body
+  };
+
   return (
     <div>
       <div className="header-title">
         <h1>
           Hello, I'm Brian <span role="img" aria-label="wave">👋</span>
         </h1>
+        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        </button>
       </div>
 
       <div className="header-nav">
