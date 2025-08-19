@@ -5,15 +5,26 @@ import Profile from "./components/profile";
 import Skills from "./components/skills";
 import Services from "./components/services";
 import Contact from "./components/contact";
-
+import Projects from "./components/projects";
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <Profile />
-      <Services />
-      <Skills />
-      <Contact />
+      <section id="profile">
+        <Profile />
+      </section>
+      <section id="services">
+        <Services />
+      </section>
+      <section id="skills">
+        <Skills />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 };

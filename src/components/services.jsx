@@ -30,7 +30,11 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="services-wrapper">
+    <div id="services" className="services-page">
+      <div className="services-header">
+      <h1>My Services</h1>
+      </div>
+       <div className="services-wrapper">
       <div className="services-container">
         {services.map((service, index) => (
           <div key={index} className="service-card">
@@ -41,5 +45,7 @@ export default function Services() {
         ))}
       </div>
     </div>
+    </div>
+   
   );
 }

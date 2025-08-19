@@ -49,3 +49,10 @@
   line-height: 1.5;
   color: rgb(193, 220, 187);
 }
+
+.services-header {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 20px;
+}

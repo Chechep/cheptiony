@@ -1,0 +1,20 @@
+.projects-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: rgb(193, 220, 187);
+    background-color: rgba(107, 126, 51);
+    border-radius: 10px;
+}
+.projects-header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+}
+.projects-content p {
+    color: white;
+    padding: 5px 3px 10px;
+    
+}

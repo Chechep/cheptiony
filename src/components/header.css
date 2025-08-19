@@ -1,18 +1,9 @@
-/* Container */
-.header-title {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    text-align: center;     /* Center text alignment */
-    padding-bottom: 0px;
-  }
-  
-  .header-title h1 {
+.header-title h1 { 
     font-size: 2.5rem; /* Adjust font size as needed */
-    color: white;       /* Adjust text color */
+    color: white; /* Adjust text color */
     text-shadow: 4px 4px 9px rgb(0, 0, 0); /* Optional: add a shadow for better visibility */
     margin: 0; /* Remove default margin */
-  }
+}
 
 .header-nav {
     display: flex;
@@ -23,18 +14,22 @@
     border-radius: 50px;
     border: 1px solid grey;
     width: fit-content;
-    margin: 0 auto;                /* center horizontally */
-    box-shadow: 0 4px 8px black;
-  
-    /* 👇 new part to pin it at bottom */
+    margin: 0 auto;
+    box-shadow: 10px 5px 10px black;
     position: fixed;
-    bottom: 10px;                  /* space from bottom */
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);   /* perfect center */
+    transform: translateX(-50%);
     z-index: 1000;
   }
   
-  /* Buttons (icons) */
+  .nav-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .nav-btn {
     background: none;
     border: none;
@@ -42,8 +37,8 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
-    color: white;                  /* default icon color */
-    font-size: 40px;              /* adjust size */
+    color: white;
+    font-size: 40px;
     transition: all 0.2s ease;
   }
   
@@ -51,8 +46,28 @@
     transform: translateY(-6px);
     box-shadow: 0 0 40px rgb(225, 255, 0);
   }
-
+  
   .nav-btn.active {
     background: rgb(192, 239, 49);
     color: white;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 60px; /* distance above button */
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .nav-wrapper:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
   }
