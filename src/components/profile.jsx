@@ -10,21 +10,20 @@ const Profile = () => {
 
       <div className="profile-content">
         <p>
-          I am a passionate and dedicated full-stack web developer with strong
+          Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web developer with strong
           skills in both frontend and backend development. I enjoy creating
-          efficient, scalable, and user-friendly applications that solve
-          real-world problems. Based in Nairobi, Kenya, I am passionate about
-          continuous learning and technological innovation.
+          efficient, scalable and user-friendly applications that solve
+          real-world problems.
         </p>
         <p>
           I am open to freelancing or full-time opportunities where I can
-          contribute, grow, and make meaningful impact through technology.
+          contribute, grow and make meaningful impact through technology.
         </p>
 
         {/* Contact Button */}
         <div className="contact-button-container">
           <a href="#contact" className="contact-button">
-            Contact Me
+            Let's Connect
           </a>
         </div>
       </div>

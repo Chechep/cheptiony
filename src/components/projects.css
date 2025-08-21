@@ -1,32 +1,28 @@
 /* Projects container */
-.projects-content {
-    width: 100%; /* Full width */
-    margin: 0; /* Remove auto-centering */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: rgb(193, 220, 187);
-    background-color: rgba(107, 126, 51);
-    border-radius: 0; /* Remove border radius for full-width effect */
-    text-align: center; /* Center-align text */
+    color: black;
+    background-color: rgb(170, 175, 169);
+    border-radius: 10px;
 }
 
 /* Projects header */
 .projects-header h1 {
     font-size: 2rem;
-    margin-bottom: 15px;
-    color: white;
     text-align: center; /* Ensure header text is centered */
 }
 
 /* Projects paragraph */
 .projects-content p {
-    color: white;
-    padding: 5px 3px 10px;
+    padding: 10px;
     text-align: center; /* Center-align paragraph text */
 }
 
 /* Dark mode styles for projects */
-body.dark-mode .projects-content {
+body.dark-mode .projects-container {
     background-color: #1e1e1e; /* Dark background */
     color: #ffffff; /* Light text */
 }
@@ -35,6 +31,6 @@ body.dark-mode .projects-header h1 {
     color: #ffffff; /* Light text for header */
 }
 
-body.dark-mode .projects-content p {
+body.dark-mode .projects-container p {
     color: #cccccc; /* Light text for paragraphs */
 }

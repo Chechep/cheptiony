@@ -1,62 +1,54 @@
 .contact-page {
     padding: 40px;
     text-align: center;
-    color: white;
-    background-color: rgba(107, 126, 51);
     padding-bottom: 120px;
   }
   
   .contact-page h1 {
     font-size: 32px;
     margin-bottom: 10px;
-    color: white;
+    color: black;
   }
   
   .contact-page p {
     margin-bottom: 30px;
     font-size: 16px;
-    color: rgb(193, 220, 187);
+    color: black;
   }
   
   .contact-methods {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
-  }
-
-  .contact-info {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 20px;
-    display: flex;
   }
   
   .contact-card {
-    background-color: rgba(107, 126, 51);
-    padding: 1px 30px;
+    background-color: rgb(170, 175, 169);
+    padding: 12px 40px;
     border-radius: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    text-emphasis-color: white;
     font-size: 16px;
     border: 1px solid darkgrey;
-    box-shadow: inset 3px 20px 25px rgb(0, 0, 0);
+    box-shadow: inset 3px 5px 4px black;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-detail {
+    display: none;
   }
   
   .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgb(47, 255, 0);
-    color: rgb(47, 255, 0);
+    box-shadow: 0 8px 15px black ;
   }
   
   .contact-icon {
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 10px;
     color: white;
   }

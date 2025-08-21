@@ -3,8 +3,8 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: rgb(193, 220, 187);
-    background-color: rgba(107, 126, 51);
+    color: black;
+    background-color: rgb(170, 175, 169);
     border-radius: 10px;
   }
   
@@ -19,7 +19,6 @@
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 16px;
-    color: rgb(193, 220, 187);
   }
 
   .contact-button-container {
