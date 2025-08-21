@@ -40,19 +40,16 @@
 .service-card h3 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: black;
 }
 
 .service-card p {
   font-size: 14px;
   line-height: 1.5;
-  color: black;
 }
 
 .services-header {
   text-align: center;
   font-size: 2rem;
-  color: black;
   margin-bottom: 20px;
 }
 

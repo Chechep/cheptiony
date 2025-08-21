@@ -7,13 +7,12 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center; /* Center the badges */
-  background-color: rgb(170, 175, 169);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .skill-badge {
-  background-color: white;
+  background-color: rgb(170, 175, 169);
   color: black;
   font-weight: 600;
   padding: 10px 20px;

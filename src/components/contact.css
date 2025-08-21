@@ -7,13 +7,11 @@
   .contact-page h1 {
     font-size: 32px;
     margin-bottom: 10px;
-    color: black;
   }
   
   .contact-page p {
     margin-bottom: 30px;
     font-size: 16px;
-    color: black;
   }
   
   .contact-methods {
@@ -52,6 +50,23 @@
     margin-bottom: 10px;
     color: white;
   }
+
+  .contact-icon.google {
+    color: #DB4437; /* Google red */
+  }
+  
+  .contact-icon.whatsapp {
+    color: #25D366; /* WhatsApp green */
+  }
+  
+  .contact-icon.github {
+    color: #181717; /* GitHub black */
+  }
+  
+  .contact-icon.phone {
+    color: #007AFF; /* iOS style blue for phone */
+  }
+  
 
   /* Dark mode styles for contact */
 body.dark-mode .contact-page {
