@@ -6,11 +6,11 @@ export default function HeaderNav() {
   const [darkMode, setDarkMode] = useState(false); // State for dark mode
 
   const navItems = [
-    { id: "profile", icon: "👤", name: "Profile" },
-    { id: "services", icon: "💼", name: "Services" },
-    { id: "skills", icon: "✨", name: "Skills" },
-    { id: "projects", icon: "💻", name: "Projects" },
-    { id: "contact", icon: "✉️", name: "Contact" },
+    { id: "profile", name: "Profile" },
+    { id: "services", name: "Services" },
+    { id: "skills", name: "Skills" },
+    { id: "projects", name: "Projects" },
+    { id: "contact", name: "Contact" },
   ];
 
   const handleClick = (id) => {
@@ -27,28 +27,24 @@ export default function HeaderNav() {
   };
 
   return (
-    <div>
-      <div className="header-title">
-        <h1>
-          Hello, I'm Brian <span role="img" aria-label="wave">👋</span>
-        </h1>
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-        </button>
-      </div>
-
-      <div className="header-nav">
-        {navItems.map((item) => (
-          <div key={item.id} className="nav-wrapper">
-            <button
-              className={`nav-btn ${active === item.id ? "active" : ""}`}
-              onClick={() => handleClick(item.id)}
-            >
-              {item.icon}
-            </button>
-            <span className="tooltip">{item.name}</span>
+    <div className="header">
+      <div className="header-content">
+        <div className="header-nav-wrapper">
+          <div className="header-nav">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                className={`nav-btn ${active === item.id ? "active" : ""}`}
+                onClick={() => handleClick(item.id)}
+              >
+                {item.icon} {item.name}
+              </button>
+            ))}
           </div>
-        ))}
+          <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        </div>
       </div>
     </div>
   );

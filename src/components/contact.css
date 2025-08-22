@@ -1,74 +1,108 @@
 .contact-page {
-    padding: 40px;
-    text-align: center;
-    padding-bottom: 120px;
-  }
-  
-  .contact-page h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-  
-  .contact-page p {
-    margin-bottom: 30px;
-    font-size: 16px;
-  }
-  
-  .contact-methods {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .contact-card {
-    background-color: rgb(170, 175, 169);
-    padding: 12px 40px;
-    border-radius: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    font-size: 16px;
-    border: 1px solid darkgrey;
-    box-shadow: inset 3px 5px 4px black;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  padding: 40px;
+  text-align: center;
+  padding-bottom: 120px;
+}
 
-  .contact-detail {
-    display: none;
+.contact-page h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-page p {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  padding: 12px 40px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid darkgrey;
+  box-shadow: inset 3px 5px 4px black;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-detail {
+  display: none;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px black;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  width: 32px; /* Set a consistent size for all icons */
+  height: 32px;
+}
+
+.contact-form-container {
+    margin-top: 3rem;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   
-  .contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px black ;
+  .contact-form h2 {
+    margin-bottom: 1rem;
+    color: #333;
   }
   
-  .contact-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid grey;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    background: grey;
     color: white;
-  }
-
-  .contact-icon.google {
-    color: #DB4437; /* Google red */
-  }
-  
-  .contact-icon.whatsapp {
-    color: #25D366; /* WhatsApp green */
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
   }
   
-  .contact-icon.github {
-    color: #181717; /* GitHub black */
-  }
-  
-  .contact-icon.phone {
-    color: #007AFF; /* iOS style blue for phone */
+  .contact-form button:hover {
+    background: black;
   }
   
 
-  /* Dark mode styles for contact */
+/* Official colors for each logo */
+.contact-icon.whatsapp {
+  color: #25D366;
+}
+
+.contact-icon.github {
+  color: black;
+}
+
+.contact-icon.phone {
+  color: #007AFF;
+}
+
+/* Dark mode styles for contact */
 body.dark-mode .contact-page {
   background-color: #1e1e1e; /* Dark background */
   color: #ffffff; /* Light text */

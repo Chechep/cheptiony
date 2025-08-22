@@ -1,112 +1,98 @@
-.header-title h1 { 
-    font-size: 2.5rem; /* Adjust font size as needed */
-    color: black; /* Adjust text color */
-    text-shadow: 4px 4px 9px rgb(129, 115, 115); /* Optional: add a shadow for better visibility */
-    margin: 0; /* Remove default margin */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 20px 40px;
 }
 
+/* Wrapper for nav */
+.header-nav-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Navigation bar */
 .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    background-color: rgb(170, 175, 169);
-    padding: 10px 40px;
-    border-radius: 50px;
-    border: 1px solid grey;
-    width: fit-content;
-    margin: 0 auto;
-    box-shadow: 10px 5px 10px black;
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-  }
-  
-  .nav-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .nav-btn {
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    color: white;
-    font-size: 40px;
-    transition: all 0.2s ease;
-  }
-  
-  .nav-btn:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 40px rgb(225, 255, 0);
-  }
-  
-  .nav-btn.active {
-    background: grey;
-    color: white;
-  }
-  
-  .tooltip {
-    position: absolute;
-    bottom: 60px; /* distance above button */
-    background: black;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(5px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-  
-  .nav-wrapper:hover .tooltip {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-/* Dark mode styles */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  display: flex;
+  gap: 10px; /* Space between buttons */
 }
 
-body.dark-mode .header-nav {
-  background-color: #1e1e1e;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.nav-wrapper {
+  position: relative;
 }
 
-body.dark-mode .nav-btn {
-  color: #ffffff;
+.nav-btn {
+  background-color: rgb(170, 175, 169);
+  border-radius: 100px;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-body.dark-mode .tooltip {
-  color: #ffffff;
+.nav-btn:hover {
+  background-color: grey;
+  transform: scale(1.15); /* Slight zoom effect */
+}
+
+.nav-btn.active {
+  background-color: white; /* Active button background */
 }
 
 /* Dark mode toggle button */
 .dark-mode-toggle {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 5px 15px;
+  position: fixed; /* Fixed position for bottom-right corner */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  right: 20px; /* Distance from the right of the viewport */
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 14px;
-  color: inherit;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1001; /* Ensure it stays above other elements */
 }
 
 .dark-mode-toggle:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: #555;
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Dark mode styles */
+body.dark-mode .header {
+  background-color: #121212; /* Dark mode background */
+  color: #ffffff; /* Dark mode text color */
+}
+
+body.dark-mode .header-nav {
+  background-color: transparent;
+}
+
+body.dark-mode .nav-btn {
+  background-color: #333; /* Dark mode button background */
+  color: #ffffff; /* Dark mode button text color */
+}
+
+body.dark-mode .nav-btn:hover {
+  background-color: #555; /* Darker button background on hover */
+}
+
+body.dark-mode .tooltip {
+  background: #333; /* Dark mode tooltip background */
+  color: #ffffff; /* Dark mode tooltip text */
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #555; /* Dark mode toggle background */
+  color: #ffffff; /* Dark mode toggle text color */
+}
+
+.body.darkmode .nav-btn.active {
+    background-color: white; /* Dark mode active button background */
+    color: black; /* Dark mode active button text color */
 }

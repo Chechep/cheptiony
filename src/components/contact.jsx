@@ -1,31 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // For now just log form data
+    console.log("Form submitted:", formData);
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <div id="contact" className="contact-page">
       <h1>Contact Me</h1>
       <p>Let’s connect! You can reach me through the following platforms:</p>
 
       <div className="contact-methods">
-
-        {/* Email with custom Google-colored M */}
+        {/* Gmail */}
         <a href="mailto:cheptiony6@gmail.com" className="contact-card">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 48 48"
-            className="contact-icon"
-          >
-            <path fill="#EA4335" d="M24 24L4 14v20h8V22l12 7 12-7v12h8V14z"/>
-            <path fill="#FBBC05" d="M4 14l20 10 20-10H4z"/>
-            <path fill="#34A853" d="M20 24l-8 4v6h-8V14l16 10z"/>
-            <path fill="#4285F4" d="M28 24l8 4v6h8V14l-16 10z"/>
-          </svg>
+          <img
+            src="/logos/gmail.svg"
+            alt="Gmail"
+            className="contact-icon gmail"
+          />
           <p className="contact-detail">cheptiony6@gmail.com</p>
         </a>
 
@@ -64,22 +74,45 @@ const Contact = () => {
           rel="noopener noreferrer"
           className="contact-card"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
+          <img
+            src="/logos/googlemaps.svg"
+            alt="Google Maps"
             className="contact-icon"
-          >
-            <path
-              fill="#34A853"
-              d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-            />
-            <circle cx="12" cy="9" r="2.5" fill="#4285F4" />
-          </svg>
+          />
           <p className="contact-detail">Nairobi, Kenya</p>
         </a>
+      </div>
 
+      {/* Contact Form */}
+      <div className="contact-form-container">
+        <h2>Send me a message</h2>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   );

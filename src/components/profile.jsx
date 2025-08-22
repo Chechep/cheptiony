@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="profile-header">
-        <h1>About Me</h1>
+        <h1>Get to know Brian </h1>
       </div>
 
       <div className="profile-content">
