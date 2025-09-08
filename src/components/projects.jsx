@@ -5,7 +5,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio built with React, Tailwind CSS, and Vite. Includes dark mode, responsive design, and smooth navigation.",
-    image: "/public/images/cheptiony.png", // put file inside public/
+    image: "/images/cheptiony.png", // put file inside public/
     link: "https://cheptiony.vercel.app/",
     github: "https://github.com/Chechep/cheptiony",
   },
@@ -13,7 +13,7 @@ const projects = [
     title: "Ticketing App",
     description:
       "An event ticketing platform that allows users to browse events, book tickets, and manage reservations. Built using React, Firebase, and Tailwind CSS, with responsive UI and smooth navigation.",
-    image: "/public/images/maticko.png", // put file inside public/
+    image: "/images/maticko.png", // put file inside public/
     link: "https://maticko-psi.vercel.app/",
     github: "https://github.com/Chechep/maticko",
   },
