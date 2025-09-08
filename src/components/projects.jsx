@@ -5,7 +5,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio built with React, Tailwind CSS, and Vite. Includes dark mode, responsive design, and smooth navigation.",
-    image: "/images/cheptiony.png", // put file inside public/
+    image: "/images/cheptiony.png",
     link: "https://cheptiony.vercel.app/",
     github: "https://github.com/Chechep/cheptiony",
   },
@@ -13,7 +13,7 @@ const projects = [
     title: "Ticketing App",
     description:
       "An event ticketing platform that allows users to browse events, book tickets, and manage reservations. Built using React, Firebase, and Tailwind CSS, with responsive UI and smooth navigation.",
-    image: "/images/maticko.png", // put file inside public/
+    image: "/images/maticko.png",
     link: "https://maticko-psi.vercel.app/",
     github: "https://github.com/Chechep/maticko",
   },
@@ -28,7 +28,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+            className="relative group bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
           >
             {/* Project Image */}
             <img
@@ -37,8 +37,17 @@ const Projects = () => {
               className="w-full h-48 object-cover"
             />
 
+            {/* Hover Preview (iframe) */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+              <iframe
+                src={project.link}
+                title={project.title}
+                className="w-full h-full border-none"
+              />
+            </div>
+
             {/* Project Info */}
-            <div className="p-6">
+            <div className="p-6 relative z-10 bg-gray-200 dark:bg-gray-800">
               <h2 className="text-xl font-semibold mb-3">{project.title}</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 {project.description}
