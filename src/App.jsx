@@ -6,9 +6,10 @@ import Skills from "./components/skills";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import Projects from "./components/projects";
+
 const App = () => {
   return (
-    <div className="App">
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
       <Header />
       <section id="profile">
         <Profile />
