@@ -50,7 +50,14 @@ const Contact = () => {
         <ContactCard
           href="mailto:cheptiony6@gmail.com"
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#D14836" viewBox="0 0 24 24">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              className="text-red-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
               <path d="M12 13.065L1.8 6.75v12.75h20.4V6.75L12 13.065z" />
               <path d="M12 11.064L0 4.5h24l-12 6.564z" />
             </svg>
@@ -69,14 +76,21 @@ const Contact = () => {
         />
         <ContactCard
           href="https://github.com/Chechep"
-          icon={<FontAwesomeIcon icon={faGithub} color="#181717" size="2x" />}
+          icon={<FontAwesomeIcon icon={faGithub} size="2x" className="text-[#181717] dark:text-white" />}
           label="github.com/Chechep"
         />
         <ContactCard
           href="https://www.google.com/maps?q=Nairobi,+Kenya"
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4285F4" viewBox="0 0 24 24">
-              <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5 14.5 7.6 14.5 9 13.4 11.5 12 11.5z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              className="text-blue-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5 14.5 7.6 14.5 9 13.4 11.5 12 11.5z" />
             </svg>
           }
           label="Nairobi, Kenya"
