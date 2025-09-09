@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Sun, Moon, Menu, X, Phone, Mail, Github, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function HeaderNav() {
   const [active, setActive] = useState("profile");
@@ -174,7 +175,7 @@ export default function HeaderNav() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-green-600"
           >
-            <Phone size={16} /> WhatsApp
+            <FaWhatsapp size={16} /> WhatsApp
           </a>
           <a
             href="https://github.com/Chechep"
