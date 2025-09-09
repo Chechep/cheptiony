@@ -5,13 +5,13 @@ const services = [
     icon: <FaMobileAlt className="text-3xl text-green-700 mb-3" />,
     title: "Mobile App Development",
     description:
-      "I create engaging mobile solutions from design to launch for both iOS and Android. With modern frameworks, I ensure smooth functionality, sleek interfaces, and reliable performance that support your goals. Delivering apps that are enjoyable to use and impactful for your business."
+      "I create engaging mobile solutions from design to launch for both iOS and Android. With modern frameworks, I ensure smooth functionality, sleek interfaces and reliable performance that support your goals. Delivering apps that are enjoyable to use and impactful for your business."
   },
   {
     icon: <FaCode className="text-3xl text-green-700 mb-3" />,
     title: "Web Development",
     description:
-      "I build fast, visually appealing websites that strengthen your online presence. Whether it’s a simple site or full complex e-commerce system, I use latest frameworks and technologies to provide responsive layouts, SEO-friendly structures, and fluid user experiences across all devices."
+      "I build fast, visually appealing websites that strengthen your online presence. Whether it’s a simple site or full complex e-commerce system, I use latest frameworks and technologies to provide responsive layouts, SEO-friendly structures and fluid user experiences across all devices."
   },
   {
     icon: <FaServer className="text-3xl text-green-700 mb-3" />,
@@ -23,7 +23,7 @@ const services = [
     icon: <FaDatabase className="text-3xl text-green-700 mb-3" />,
     title: "Database Management",
     description:
-      "I structure and maintain databases for top performance and security. Skilled in both SQL and NoSQL systems, I create optimized schemas, write efficient queries, and apply best practices to safeguard data, ensuring smooth, dependable access whenever it’s needed."
+      "I structure and maintain databases for top performance and security. Skilled in postgreSQL, I create optimized schemas, write efficient queries and apply best practices to safeguard data, ensuring smooth, dependable access whenever it’s needed."
   }
 ];
 
