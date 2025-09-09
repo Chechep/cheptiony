@@ -29,7 +29,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div id="services" className="py-16 px-6">
+    <div id="services" className="py-16 px-6 bg-gray-100 dark:bg-black">
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
           My Services
@@ -41,10 +41,10 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-300 dark:bg-gray-800 p-6 rounded-xl border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer transform transition hover:-translate-y-2 hover:shadow-[0_0_25px]"
+              className="bg-white dark:bg-black p-6 rounded-xl border border-gray-300 dark:border-gray-700 shadow-md cursor-pointer transform transition hover:-translate-y-2 hover:shadow-[0_0_25px]"
             >
               <div>{service.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 dark:text-white">{service.title}</h3>
               <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                 {service.description}
               </p>

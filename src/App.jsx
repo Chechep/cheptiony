@@ -9,7 +9,7 @@ import Projects from "./components/projects";
 
 const App = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
+    <div className="bg-white dark:bg-black text-gray-900 dark:text-white min-h-screen">
       <Header />
       <section id="profile">
         <Profile />

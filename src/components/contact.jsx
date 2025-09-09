@@ -39,18 +39,18 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="py-16 px-6 dark:bg-gray-900 dark:text-white">
+    <div id="contact" className="py-16 px-6 bg-white dark:bg-black dark:text-white">
       <h1 className="text-3xl font-bold mb-3 text-center">Contact Me</h1>
       <p className="mb-12 text-lg text-center">
         Let’s connect! Reach me through the platforms below or send a message.
       </p>
 
       {/* Contact Cards */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-6 mb-12">
         <ContactCard
           href="mailto:cheptiony6@gmail.com"
           icon={
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#D14836">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#D14836" viewBox="0 0 24 24">
               <path d="M12 13.065L1.8 6.75v12.75h20.4V6.75L12 13.065z" />
               <path d="M12 11.064L0 4.5h24l-12 6.564z" />
             </svg>
@@ -84,7 +84,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="max-w-lg mx-auto bg-gray-100 dark:bg-gray-800 p-8 rounded-xl shadow-lg relative">
+      <div className="max-w-lg mx-auto bg-gray-100 dark:bg-black border border-gray-300 dark:border-gray-700 p-8 rounded-xl shadow-lg relative">
         <h2 className="text-2xl font-semibold mb-6">Send me a message</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -94,7 +94,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-black dark:border-gray-700 dark:text-white"
           />
           <input
             type="email"
@@ -103,7 +103,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-black dark:border-gray-700 dark:text-white"
           />
           <textarea
             name="message"
@@ -112,13 +112,13 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="w-full p-3 rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-black dark:border-gray-700 dark:text-white"
           ></textarea>
           <button
             type="submit"
             disabled={status === "sending"}
-            className={`w-full flex items-center justify-center gap-2 bg-gray-600 text-white py-3 rounded-lg transition transform hover:scale-105 ${
-              status === "sending" ? "cursor-not-allowed opacity-70" : "hover:bg-black"
+            className={`w-full flex items-center justify-center gap-2 bg-green-600 text-white py-3 rounded-lg transition transform hover:scale-105 ${
+              status === "sending" ? "cursor-not-allowed opacity-70" : "hover:bg-green-700"
             }`}
           >
             {status === "sending" && <FontAwesomeIcon icon={faSpinner} spin />}

@@ -22,13 +22,15 @@ const projects = [
 const Projects = () => {
   return (
     <div className="max-w-5xl mx-auto p-6 mt-20">
-      <h1 className="text-3xl font-bold text-center mb-8">Projects</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+        Projects
+      </h1>
 
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative group bg-gray-200 dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+            className="relative group bg-gray-200 dark:bg-black rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition border border-gray-300 dark:border-gray-700"
           >
             {/* Project Image */}
             <img
@@ -37,18 +39,23 @@ const Projects = () => {
               className="w-full h-48 object-cover"
             />
 
-            {/* Hover Preview (iframe) */}
+            {/* Hover Preview (iframe with dark overlay) */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/80 z-10"></div>
+              {/* Iframe */}
               <iframe
                 src={project.link}
                 title={project.title}
-                className="w-full h-full border-none"
+                className="w-full h-full border-none relative z-20"
               />
             </div>
 
             {/* Project Info */}
-            <div className="p-6 relative z-10 bg-gray-200 dark:bg-gray-800">
-              <h2 className="text-xl font-semibold mb-3">{project.title}</h2>
+            <div className="p-6 relative z-30 bg-gray-200 dark:bg-black">
+              <h2 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                {project.title}
+              </h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 {project.description}
               </p>
