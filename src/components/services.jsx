@@ -11,7 +11,7 @@ const services = [
     icon: <FaCode className="text-3xl text-green-700 mb-3" />,
     title: "Web Development",
     description:
-      "I build fast, visually appealing websites that strengthen your online presence. Whether it’s a simple site or full complex e-commerce system, I use latest frameworks and technologies to provide responsive layouts, SEO-friendly structures and fluid user experiences across all devices."
+      "I build fast, visually appealing websites that strengthen your online presence. Whether it’s a simple site or full complex e-commerce system, I use latest frameworks and technologies to provide responsive layouts, SEO-friendly structures and user friendly experiences across all devices."
   },
   {
     icon: <FaServer className="text-3xl text-green-700 mb-3" />,
@@ -41,7 +41,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-300 dark:bg-gray-800 p-6 rounded-xl border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer transform transition hover:-translate-y-2 hover:shadow-[0_0_25px_#00ff00]"
+              className="bg-gray-300 dark:bg-gray-800 p-6 rounded-xl border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer transform transition hover:-translate-y-2 hover:shadow-[0_0_25px]"
             >
               <div>{service.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>

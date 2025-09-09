@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
 export default function HeaderNav() {
   const [active, setActive] = useState("profile");
@@ -37,7 +38,7 @@ export default function HeaderNav() {
               className={`rounded-full px-10 py-2.5 text-sm cursor-pointer transition-all duration-200 
                 bg-[rgb(170,175,169)] hover:bg-gray-500 hover:scale-110
                 dark:bg-[#333] dark:text-white dark:hover:bg-[#555]
-                ${active === item.id ? "bg-white text-black dark:bg-white dark:text-black" : ""}`}
+                ${active === item.id ? "bg-white text-black dark:bg-gray-400 dark:text-black" : ""}`}
             >
               {item.name}
             </button>
@@ -47,9 +48,28 @@ export default function HeaderNav() {
         {/* Dark mode toggle */}
         <button
           onClick={toggleDarkMode}
-          className="fixed bottom-5 right-5 z-[1001] rounded-full bg-[#333] text-white px-4 py-2 text-sm cursor-pointer transition-all duration-200 hover:bg-[#555] hover:scale-110 dark:bg-[#555] dark:text-white"
+          className="fixed top-5 right-5 z-[1001] rounded-full bg-[#333] text-white p-3 cursor-pointer transition-all duration-300 hover:bg-[#555] hover:scale-110 dark:bg-[#555] dark:text-white"
         >
-          {darkMode ? "☀️" : "🌙"}
+          <span className="relative flex items-center justify-center w-5 h-5">
+            {/* Sun icon */}
+            <Sun
+              size={20}
+              className={`absolute transition-all duration-500 ${
+                darkMode
+                  ? "opacity-100 rotate-0 text-yellow-400"
+                  : "opacity-0 -rotate-90"
+              }`}
+            />
+            {/* Moon icon */}
+            <Moon
+              size={20}
+              className={`absolute transition-all duration-500 ${
+                darkMode
+                  ? "opacity-0 rotate-90"
+                  : "opacity-100 rotate-0 text-blue-300"
+              }`}
+            />
+          </span>
         </button>
       </div>
     </header>
