@@ -49,7 +49,7 @@ export default function HeaderNav() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-[1000] px-4 md:px-10 py-3 md:py-5
+      className="fixed top-0 left-0 w-full z-[1000] px-9 md:px-10 py-7 md:py-5
                  bg-white dark:bg-[#121212] dark:text-white
                  transition-colors duration-0 shadow-md"
     >
