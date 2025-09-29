@@ -11,7 +11,6 @@ export default function Navbar({ theme, onToggleTheme }) {
           onClick={onToggleTheme}
           className="p-2 rounded-full hover:bg-slate-200/20 transition"
         >
-          {theme === THEMES.LIGHT && <Sun className="w-6 h-6 text-yellow-500" />}
           {theme === THEMES.DARK && <Moon className="w-6 h-6 text-blue-400" />}
           {theme === THEMES.GALAXY && <Star className="w-6 h-6 text-sky-400" />}
         </button>
