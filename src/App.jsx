@@ -1,33 +1,48 @@
-import React from "react";
-import "./index.css";
-import Header from "./components/header";
-import Profile from "./components/profile";
-import Skills from "./components/skills";
-import Services from "./components/services";
-import Contact from "./components/contact";
-import Projects from "./components/projects";
+import React, { useState } from "react";
+import { THEMES } from "./theme";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Starfield from "./components/Starfield";
 
-const App = () => {
-  return (
-    <div className="bg-white dark:bg-black text-gray-900 dark:text-white min-h-screen">
-      <Header />
-      <section id="profile">
-        <Profile />
-      </section>
-      <section id="services">
-        <Services />
-      </section>
-      <section id="skills">
-        <Skills />
-      </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
-    </div>
-  );
+
+export default function App() {
+const [theme, setTheme] = useState(THEMES.GALAXY);
+
+
+const cycleTheme = () => {
+setTheme((prev) =>
+prev === THEMES.GALAXY ? THEMES.DARK : prev === THEMES.DARK ? THEMES.LIGHT : THEMES.GALAXY
+);
 };
 
-export default App;
+
+return (
+<div
+className={`min-h-screen relative transition-colors duration-500 ${
+theme === THEMES.DARK
+? "bg-black text-white"
+: theme === THEMES.LIGHT
+? "bg-white text-slate-900"
+: "bg-gradient-to-b from-[#061826] to-[#140a2d] text-white"
+}`}
+>
+{/* Galaxy canvas background */}
+<Starfield mode={theme} />
+
+
+{/* Navbar */}
+<Navbar theme={theme} onToggleTheme={cycleTheme} />
+
+
+{/* Main Content */}
+<main className="relative z-20">
+<Home />
+</main>
+
+
+{/* Footer */}
+<Footer />
+</div>
+);
+}
