@@ -15,14 +15,20 @@ export default {
           "0%": { transform: "rotate(0deg) translateX(110px) rotate(0deg)" },
           "100%": { transform: "rotate(360deg) translateX(110px) rotate(-360deg)" },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
-        "spin-slow": "spin 1.5s linear infinite",
         float: "float 6s ease-in-out infinite",
         orbit: "orbit 12s linear infinite",
+        "spin-slow": "spin-slow 3s linear infinite", // slower spin
+        slideIn: "slideIn 0.4s ease-out forwards",
+        fadeOut: "fadeOut 0.4s ease-in forwards",
       },
     },
   },
   darkMode: "class",
   plugins: [],
-}
+};
