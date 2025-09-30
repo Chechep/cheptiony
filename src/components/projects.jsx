@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  Globe,
-  MessageCircle,
-  Ticket,
   ExternalLink,
   Github,
 } from "lucide-react";
@@ -15,7 +12,7 @@ export default function Projects() {
       languages: ["React", "TailwindCSS", "Vite"],
       demo: "https://cheptiony.vercel.app/",
       code: "https://github.com/Chechep/cheptiony",
-      icon: <Globe className="w-10 h-10 text-purple-400" />,
+      preview: "/src/assets/portfolio.png",
     },
     {
       title: "Communication App",
@@ -24,7 +21,7 @@ export default function Projects() {
       languages: ["React", "Firebase", "TailwindCSS"],
       demo: "https://comms-pro.vercel.app/",
       code: "https://github.com/Chechep/comms",
-      icon: <MessageCircle className="w-10 h-10 text-pink-400" />,
+      preview: "/src/assets/comms-pro.png",
     },
     {
       title: "Ticketing App",
@@ -33,7 +30,7 @@ export default function Projects() {
       languages: ["React", "Flask", "PostgreSQL"],
       demo: "https://maticko-psi.vercel.app/",
       code: "https://github.com/Chechep/maticko",
-      icon: <Ticket className="w-10 h-10 text-green-400" />,
+      preview: "/src/assets/maticko.png",
     },
   ];
 
@@ -49,13 +46,28 @@ export default function Projects() {
             key={idx}
             className="p-6 bg-slate-800/50 rounded-xl shadow-lg hover:shadow-purple-500/20 transition transform hover:-translate-y-2"
           >
+            {/* Project Preview */}
+            {project.preview && (
+              <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={project.preview}
+                  alt={`${project.title} preview`}
+                  className="w-full h-40 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105"
+                />
+              </a>
+            )}
+
+            {/* Icon */}
             <div className="mb-4 flex items-center justify-center">
               {project.icon}
             </div>
 
+            {/* Title */}
             <h3 className="text-2xl font-semibold mb-3 text-white">
               {project.title}
             </h3>
+
+            {/* Description */}
             <p className="text-slate-300 mb-4">{project.description}</p>
 
             {/* Languages */}
