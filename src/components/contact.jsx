@@ -3,9 +3,38 @@ import React, { useState } from "react";
 import { Github, Linkedin, Mail, Phone, Send, Loader2 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+
+const icons = [
+  {
+    name: "WhatsApp",
+    component: <FaWhatsapp />,
+    href: "https://wa.me/254790086093",
+    delay: "0s",
+  },
+  {
+    name: "Email",
+    component: <Mail />,
+    href: "mailto:cheptiony6@gmail.com",
+    delay: "3s",
+  },
+  {
+    name: "GitHub",
+    component: <Github />,
+    href: "https://github.com/Chechep",
+    delay: "6s",
+  },
+  {
+    name: "LinkedIn",
+    component: <Linkedin />,
+    href: "https://linkedin.com/in/cheptiony",
+    delay: "9s",
+  },
+];
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [activeIcon, setActiveIcon] = useState(icons[0]); // default WhatsApp
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -32,55 +61,41 @@ const Contact = () => {
       className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6"
     >
       {/* Orbiting Social Icons with Ring */}
-      <div className="relative w-[450px] h-[450px] mb-16 flex items-center justify-center">
-        {/* Faint orbit ring */}
-        <div className="absolute w-[360px] h-[360px] rounded-full border border-sky-500/30"></div>
+      <div className="relative w-[300px] h-[300px] mb-8 flex items-center justify-center">
+        {/* Orbit ring */}
+        <div className="absolute w-[220px] h-[220px] rounded-full border border-sky-500/30"></div>
 
-        {/* WhatsApp */}
-        <div className="absolute top-1/2 left-1/2 animate-orbit">
-          <a
-            href="https://wa.me/254790086093"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-200 text-3xl hover:text-sky-400 transform hover:scale-125 transition"
+        {icons.map((icon, i) => (
+          <motion.div
+            key={i}
+            drag
+            dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
+            className={`absolute top-1/2 left-1/2 animate-orbit`}
+            style={{ animationDelay: icon.delay }}
+            onAnimationIteration={() => setActiveIcon(icon)}
           >
-            <FaWhatsapp />
-          </a>
-        </div>
+            <a
+              href={icon.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-200 text-3xl hover:text-sky-400 transform hover:scale-125 transition"
+            >
+              {icon.component}
+            </a>
+          </motion.div>
+        ))}
+      </div>
 
-        {/* Email */}
-        <div className="absolute top-1/2 left-1/2 animate-orbit [animation-delay:3s]">
-          <a
-            href="mailto:cheptiony6@gmail.com"
-            className="text-sky-200 text-3xl hover:text-sky-400 transform hover:scale-125 transition"
-          >
-            <Mail />
-          </a>
-        </div>
-
-        {/* GitHub */}
-        <div className="absolute top-1/2 left-1/2 animate-orbit [animation-delay:6s]">
-          <a
-            href="https://github.com/Chechep"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-200 text-3xl hover:text-sky-400 transform hover:scale-125 transition"
-          >
-            <Github />
-          </a>
-        </div>
-
-        {/* LinkedIn */}
-        <div className="absolute top-1/2 left-1/2 animate-orbit [animation-delay:9s]">
-          <a
-            href="https://linkedin.com/in/cheptiony"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-200 text-3xl hover:text-sky-400 transform hover:scale-125 transition"
-          >
-            <Linkedin />
-          </a>
-        </div>
+      {/* Active Button Below Ring */}
+      <div className="mb-12">
+        <a
+          href={activeIcon.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-6 py-3 bg-sky-600 hover:bg-sky-500 text-white rounded-full font-medium transition"
+        >
+          {activeIcon.component}
+        </a>
       </div>
 
       {/* Call Button */}

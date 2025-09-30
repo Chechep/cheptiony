@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa"; // ✅ WhatsApp logo
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   const names = ["Brian", "Cheptiony"];
@@ -94,7 +94,7 @@ export default function Hero() {
           className="text-sky-400 hover:text-sky-600 transition text-3xl"
           aria-label="WhatsApp"
         >
-          <FaWhatsapp /> {/* ✅ WhatsApp logo */}
+          <FaWhatsapp />
         </a>
         <a
           href="mailto:cheptiony6@gmail.com"

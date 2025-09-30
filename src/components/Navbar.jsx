@@ -4,7 +4,7 @@ import { THEMES } from "../theme";
 
 export default function Navbar({ theme, onToggleTheme }) {
   return (
-    <nav className="fixed top-0 left-0 w-full z-30 backdrop-blur bg-black/20 dark:bg-white/10 border-b border-slate-700/30 dark:border-slate-300/20">
+    <nav className="fixed top-0 left-0 w-full z-30">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Theme Toggle */}
         <button

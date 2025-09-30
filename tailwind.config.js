@@ -12,8 +12,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         orbit: {
-          "0%": { transform: "rotate(0deg) translateX(180px) rotate(0deg)" },
-          "100%": { transform: "rotate(360deg) translateX(180px) rotate(-360deg)" },
+          "0%": { transform: "rotate(0deg) translateX(110px) rotate(0deg)" },
+          "100%": { transform: "rotate(360deg) translateX(110px) rotate(-360deg)" },
         },
       },
       animation: {
