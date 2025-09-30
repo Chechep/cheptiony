@@ -9,7 +9,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         {/* Theme Toggle */}
         <button
           onClick={onToggleTheme}
-          className="p-2 rounded-full hover:bg-slate-200/20 transition"
+          className="p-2 hover:bg-slate-200/20 transition"
           aria-label="Toggle Theme"
         >
           {theme === THEMES.DARK && (
