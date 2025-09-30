@@ -1,8 +1,10 @@
 import React from "react";
-import {
-  ExternalLink,
-  Github,
-} from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+
+// Import images
+import portfolioImg from "../assets/portfolio.png";
+import commsImg from "../assets/comms-pro.png";
+import matickoImg from "../assets/maticko.png";
 
 export default function Projects() {
   const projects = [
@@ -12,34 +14,29 @@ export default function Projects() {
       languages: ["React", "TailwindCSS", "Vite"],
       demo: "https://cheptiony.vercel.app/",
       code: "https://github.com/Chechep/cheptiony",
-      preview: "/src/assets/portfolio.png",
+      preview: portfolioImg,
     },
     {
       title: "Communication App",
-      description:
-        "A real-time messaging app with secure chat, channels, and collaboration features.",
+      description: "A real-time messaging app with secure chat, channels, and collaboration features.",
       languages: ["React", "Firebase", "TailwindCSS"],
       demo: "https://comms-pro.vercel.app/",
       code: "https://github.com/Chechep/comms",
-      preview: "/src/assets/comms-pro.png",
+      preview: commsImg,
     },
     {
       title: "Ticketing App",
-      description:
-        "A smart event ticketing system for booking, tracking, and managing events.",
+      description: "A smart event ticketing system for booking, tracking, and managing events.",
       languages: ["React", "Flask", "PostgreSQL"],
       demo: "https://maticko-psi.vercel.app/",
       code: "https://github.com/Chechep/maticko",
-      preview: "/src/assets/maticko.png",
+      preview: matickoImg,
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="py-20 px-6 max-w-6xl mx-auto relative z-20"
-    >
-      <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
+    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20">
+      <h2 className="text-4xl font-bold text-center mb-10 text-white">Projects</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
@@ -57,15 +54,8 @@ export default function Projects() {
               </a>
             )}
 
-            {/* Icon */}
-            <div className="mb-4 flex items-center justify-center">
-              {project.icon}
-            </div>
-
             {/* Title */}
-            <h3 className="text-2xl font-semibold mb-3 text-white">
-              {project.title}
-            </h3>
+            <h3 className="text-2xl font-semibold mb-3 text-white">{project.title}</h3>
 
             {/* Description */}
             <p className="text-slate-300 mb-4">{project.description}</p>
