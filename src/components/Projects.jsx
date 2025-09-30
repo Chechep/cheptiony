@@ -1,31 +1,39 @@
 import React from "react";
-import { Globe, ShoppingCart, Wallet, ExternalLink, Github } from "lucide-react";
+import {
+  Globe,
+  MessageCircle,
+  Ticket,
+  ExternalLink,
+  Github,
+} from "lucide-react";
 
 export default function Projects() {
   const projects = [
     {
       title: "Portfolio Website",
-      description: "A personal site showcasing my projects and skills.",
+      description: "A personal site showcasing my projects, skills, and experiences.",
       languages: ["React", "TailwindCSS", "Vite"],
-      demo: "https://your-portfolio-demo.com",
-      code: "https://github.com/yourusername/portfolio",
+      demo: "https://cheptiony.vercel.app/",
+      code: "https://github.com/Chechep/cheptiony",
       icon: <Globe className="w-10 h-10 text-purple-400" />,
     },
     {
-      title: "E-Commerce App",
-      description: "Full-stack app with product listings, cart, and checkout.",
+      title: "Communication App",
+      description:
+        "A real-time messaging app with secure chat, channels, and collaboration features.",
       languages: ["React", "Firebase", "TailwindCSS"],
-      demo: "https://your-ecommerce-demo.com",
-      code: "https://github.com/yourusername/ecommerce-app",
-      icon: <ShoppingCart className="w-10 h-10 text-pink-400" />,
+      demo: "https://comms-pro.vercel.app/",
+      code: "https://github.com/Chechep/comms",
+      icon: <MessageCircle className="w-10 h-10 text-pink-400" />,
     },
     {
-      title: "Budget Tracker",
-      description: "Track expenses, income, and visualize spending habits.",
+      title: "Ticketing App",
+      description:
+        "A smart event ticketing system for booking, tracking, and managing events.",
       languages: ["React", "Flask", "PostgreSQL"],
-      demo: "https://your-budget-demo.com",
-      code: "https://github.com/yourusername/budget-tracker",
-      icon: <Wallet className="w-10 h-10 text-green-400" />,
+      demo: "https://maticko-psi.vercel.app/",
+      code: "https://github.com/Chechep/maticko",
+      icon: <Ticket className="w-10 h-10 text-green-400" />,
     },
   ];
 

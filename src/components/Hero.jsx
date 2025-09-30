@@ -13,29 +13,22 @@ export default function Hero({ theme }) {
 
   // Typing effect
   useEffect(() => {
-    const typingSpeed = 150; // ms per letter
-
+    const typingSpeed = 150;
     const interval = setInterval(() => {
       const currentName = names[nameIndex];
-
       if (!deleting) {
         setDisplayedText(currentName.slice(0, letterIndex + 1));
         setLetterIndex((prev) => prev + 1);
-
-        if (letterIndex + 1 === currentName.length) {
-          setDeleting(true);
-        }
+        if (letterIndex + 1 === currentName.length) setDeleting(true);
       } else {
         setDisplayedText(currentName.slice(0, letterIndex - 1));
         setLetterIndex((prev) => prev - 1);
-
         if (letterIndex - 1 === 0) {
           setDeleting(false);
           setNameIndex((prev) => (prev + 1) % names.length);
         }
       }
     }, typingSpeed);
-
     return () => clearInterval(interval);
   }, [letterIndex, deleting, nameIndex]);
 
@@ -47,24 +40,14 @@ export default function Hero({ theme }) {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Accent color based on theme
-  const accent =
-    theme === THEMES.LIGHT
-      ? "text-sky-600 hover:text-sky-800"
-      : "text-sky-400 hover:text-sky-600";
-
+  const accent = "text-sky-400 hover:text-sky-600";
   const buttonPrimary =
-    theme === THEMES.LIGHT
-      ? "bg-sky-600 text-white hover:bg-sky-700"
-      : "bg-sky-600/80 text-white hover:bg-sky-700/90";
-
+    "bg-sky-600 text-white hover:bg-sky-700 shadow-lg shadow-sky-500/30";
   const buttonSecondary =
-    theme === THEMES.LIGHT
-      ? "border border-sky-600 text-sky-700 hover:bg-sky-200"
-      : "border border-sky-400/70 text-sky-300 hover:bg-sky-500/10";
+    "border border-sky-400/70 text-sky-300 hover:bg-sky-500/10";
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-20">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-20 animate-float">
       {/* Name Typing */}
       <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6">
         Get to know{" "}
@@ -90,13 +73,13 @@ export default function Hero({ theme }) {
       <div className="flex gap-4 mb-8">
         <a
           href="#projects"
-          className={`px-6 py-3 rounded-full font-medium transition backdrop-blur ${buttonPrimary}`}
+          className={`px-6 py-3 rounded-full font-medium transition transform hover:scale-105 backdrop-blur ${buttonPrimary}`}
         >
           View Projects
         </a>
         <a
           href="#contact"
-          className={`px-6 py-3 rounded-full font-medium transition backdrop-blur ${buttonSecondary}`}
+          className={`px-6 py-3 rounded-full font-medium transition transform hover:scale-105 backdrop-blur ${buttonSecondary}`}
         >
           Let's Connect
         </a>
@@ -108,14 +91,14 @@ export default function Hero({ theme }) {
           href="https://wa.me/254790086093"
           target="_blank"
           rel="noopener noreferrer"
-          className={`transition text-3xl ${accent}`}
+          className={`transition text-3xl transform hover:scale-125 ${accent}`}
           aria-label="WhatsApp"
         >
           <FaWhatsapp />
         </a>
         <a
           href="mailto:cheptiony6@gmail.com"
-          className={`transition text-2xl ${accent}`}
+          className={`transition text-2xl transform hover:scale-125 ${accent}`}
           aria-label="Email"
         >
           <Mail />
@@ -124,7 +107,7 @@ export default function Hero({ theme }) {
           href="https://github.com/Chechep"
           target="_blank"
           rel="noopener noreferrer"
-          className={`transition text-2xl ${accent}`}
+          className={`transition text-2xl transform hover:scale-125 ${accent}`}
           aria-label="GitHub"
         >
           <Github />
@@ -133,7 +116,7 @@ export default function Hero({ theme }) {
           href="https://linkedin.com/in/cheptiony"
           target="_blank"
           rel="noopener noreferrer"
-          className={`transition text-2xl ${accent}`}
+          className={`transition text-2xl transform hover:scale-125 ${accent}`}
           aria-label="LinkedIn"
         >
           <Linkedin />
