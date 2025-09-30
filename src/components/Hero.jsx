@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // ✅ WhatsApp logo
 
 export default function Hero() {
-  const names = ["brian", "cheptiony"];
+  const names = ["Brian", "Cheptiony"];
   const [displayedText, setDisplayedText] = useState("");
   const [nameIndex, setNameIndex] = useState(0);
   const [letterIndex, setLetterIndex] = useState(0);
@@ -11,7 +12,7 @@ export default function Hero() {
 
   // Typing effect
   useEffect(() => {
-    const typingSpeed = 250; // ms per letter
+    const typingSpeed = 150; // ms per letter
 
     const interval = setInterval(() => {
       const currentName = names[nameIndex];
@@ -41,7 +42,7 @@ export default function Hero() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 500); // blink every 0.5s
+    }, 500);
     return () => clearInterval(cursorInterval);
   }, []);
 
@@ -52,7 +53,11 @@ export default function Hero() {
         Get to know{" "}
         <span className="text-sky-400">
           {displayedText}
-          <span className={`ml-1 inline-block ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}>
+          <span
+            className={`ml-1 inline-block ${
+              showCursor ? "opacity-100" : "opacity-0"
+            } transition-opacity`}
+          >
             |
           </span>
         </span>
@@ -60,8 +65,8 @@ export default function Hero() {
 
       {/* Description */}
       <p className="max-w-2xl text-lg sm:text-xl text-slate-300 mb-8">
-        Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web developer with strong
-        skills in both frontend and backend development.
+        Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web
+        developer with strong skills in both frontend and backend development.
       </p>
 
       {/* CTA Buttons */}
@@ -86,10 +91,10 @@ export default function Hero() {
           href="https://wa.me/254790086093"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sky-400 hover:text-sky-600 transition text-2xl"
+          className="text-sky-400 hover:text-sky-600 transition text-3xl"
           aria-label="WhatsApp"
         >
-          <MessageCircle />
+          <FaWhatsapp /> {/* ✅ WhatsApp logo */}
         </a>
         <a
           href="mailto:cheptiony6@gmail.com"
