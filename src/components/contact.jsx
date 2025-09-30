@@ -23,22 +23,24 @@ const Contact = ({ theme }) => {
     setLoading(true);
 
     emailjs
-      .sendForm("service_qlo57hg", "template_wrgr2gl", e.target, "9ecYH6LPP5bIj5OMT")
-      .then(
-        () => {
-          setToast({ message: "Message sent successfully ✅", type: "success" });
-          e.target.reset();
-          setLoading(false);
-        },
-        (error) => {
-          setToast({ message: "Something went wrong ❌", type: "error" });
-          console.error(error);
-          setLoading(false);
-        }
-      );
+      .sendForm(
+        "service_qlo57hg",      // ✅ your Service ID
+        "template_wrgr2gl",     // ✅ your Template ID
+        e.target,
+        "9ecYH6LPP5bIj5OMT"          // ✅ replace with your actual Public Key
+      )
+      .then((result) => {
+        console.log("SUCCESS!", result.text);
+        setToast({ message: "Message sent successfully ✅", type: "success" });
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error("FAILED...", error.text);
+        setToast({ message: "Something went wrong ❌", type: "error" });
+      })
+      .finally(() => setLoading(false));
   };
 
-  // Card background depends only on DARK / GALAXY
   const cardClasses =
     theme === THEMES.DARK
       ? "bg-slate-900 text-white border border-slate-700"
