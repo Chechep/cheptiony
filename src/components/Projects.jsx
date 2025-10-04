@@ -5,6 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
 import matickoImg from "../assets/maticko.png";
+import scribblyImg from "../assets/scribbly.png";
 
 export default function Projects() {
   const projects = [
@@ -32,6 +33,15 @@ export default function Projects() {
       code: "https://github.com/Chechep/maticko",
       preview: matickoImg,
     },
+    {
+      title: "Scribbly Blog",
+      description: "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
+      languages: ["React", "TailwindCSS", "Vite"],
+      demo: "https://scribb-ly.vercel.app/",
+      code: "https://github.com/Chechep/scribbly",
+      preview: scribblyImg,
+    },
+
   ];
 
   return (
