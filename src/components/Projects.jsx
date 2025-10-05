@@ -4,7 +4,7 @@ import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
 import matickoImg from "../assets/maticko.png";
 import scribblyImg from "../assets/scribbly.png";
-import inventoryImg from "../assets/inventory.png";
+import inventoryImg from "../assets/Inventory.png";
 
 export default function Projects() {
   const projects = [
