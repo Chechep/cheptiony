@@ -6,6 +6,7 @@ import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
 import matickoImg from "../assets/maticko.png";
 import scribblyImg from "../assets/scribbly.png";
+import inventoryImg from "../assets/inventory.png";
 
 export default function Projects() {
   const projects = [
@@ -38,10 +39,17 @@ export default function Projects() {
       description: "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
       languages: ["React", "TailwindCSS", "Vite"],
       demo: "https://scribb-ly.vercel.app/",
-      code: "https://github.com/Chechep/scribbly",
-      preview: scribblyImg,
+      code: "https://github.com/Chechep/scribbly", // update if different
+      preview: scribblyImg, // import this image at the top
     },
-
+    {
+      title: "Inventory Tracker Pro",
+      description: "A web-based inventory management system for tracking stock levels, products, and transactions.",
+      languages: ["React", "TailwindCSS", "Firebase"],
+      demo: "https://inventory-tracker-pro.vercel.app/",
+      code: "https://github.com/Chechep/inventory-tracker-pro", // update if needed
+      preview: inventoryImg, // import your preview image here
+    },
   ];
 
   return (
