@@ -23,7 +23,7 @@ export default {
       animation: {
         float: "float 6s ease-in-out infinite",
         orbit: "orbit 12s linear infinite",
-        "spin-slow": "spin-slow 3s linear infinite", // slower spin
+        "spin-slow": "spin-slow 3s linear infinite",
         slideIn: "slideIn 0.4s ease-out forwards",
         fadeOut: "fadeOut 0.4s ease-in forwards",
       },

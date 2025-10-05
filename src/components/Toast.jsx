@@ -6,8 +6,8 @@ const Toast = ({ message, type = "success", onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setClosing(true);
-      setTimeout(() => onClose(), 400); // wait for fadeOut animation
-    }, 3000); // show for 3s
+      setTimeout(() => onClose(), 400);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [onClose]);
 

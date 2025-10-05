@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import Toast from "./Toast";
-import { THEMES } from "../theme"; // only using DARK & GALAXY
+import { THEMES } from "../theme";
 
 const icons = [
   { name: "WhatsApp", component: <FaWhatsapp />, href: "https://wa.me/254790086093", delay: "0s" },
@@ -24,10 +24,10 @@ const Contact = ({ theme }) => {
 
     emailjs
       .sendForm(
-        "service_qlo57hg",      // ✅ your Service ID
-        "template_wrgr2gl",     // ✅ your Template ID
+        "service_qlo57hg",
+        "template_wrgr2gl",
         e.target,
-        "9ecYH6LPP5bIj5OMT"          // ✅ replace with your actual Public Key
+        "9ecYH6LPP5bIj5OMT"
       )
       .then((result) => {
         console.log("SUCCESS!", result.text);

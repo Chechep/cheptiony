@@ -13,7 +13,7 @@ export default function Hero({ theme }) {
 
   // Typing effect
   useEffect(() => {
-    const typingSpeed = 150;
+    const typingSpeed = 100;
     const interval = setInterval(() => {
       const currentName = names[nameIndex];
       if (!deleting) {
