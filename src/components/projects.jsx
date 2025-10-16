@@ -5,6 +5,7 @@ import commsImg from "../assets/comms-pro.png";
 import matickoImg from "../assets/maticko.png";
 import scribblyImg from "../assets/scribbly.png";
 import inventoryImg from "../assets/inventory.png";
+import kejalinkImg from "../assets/kejalink.png";
 
 export default function Projects() {
   const projects = [
@@ -48,7 +49,16 @@ export default function Projects() {
       code: "https://github.com/Chechep/inventory-tracker-pro",
       preview: inventoryImg,
     },
+    {
+      title: "KejaLink",
+      description: "A modern property management and rent payment platform connecting tenants and landlords with ease.",
+      languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
+      demo: "https://keja-link.vercel.app/",
+      code: "https://github.com/Chechep/Kejani",
+      preview: kejalinkImg,
+    },
   ];
+  
 
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20">
