@@ -2,7 +2,7 @@ import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
-import matickoImg from "../assets/maticko.png";
+import castorImg from "../assets/castor.png";
 import scribblyImg from "../assets/scribbly.png";
 import inventoryImg from "../assets/inventory.png";
 import kejalinkImg from "../assets/kejalink.png";
@@ -26,12 +26,12 @@ export default function Projects() {
       preview: commsImg,
     },
     {
-      title: "Ticketing App",
-      description: "A smart event ticketing system for booking, tracking, and managing events.",
-      languages: ["React", "Flask", "PostgreSQL"],
-      demo: "https://maticko-psi.vercel.app/",
-      code: "https://github.com/Chechep/maticko",
-      preview: matickoImg,
+      title: "Castor Oil Ecommerce",
+      description: "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
+      languages: ["React", "Flask", "Firebase"],
+      demo: "https://your-castor-oil-store.vercel.app/",
+      code: "https://github.com/Chechep/castor-oil-ecommerce",
+      preview: castorImg,
     },
     {
       title: "Scribbly Blog",
