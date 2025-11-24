@@ -42,6 +42,15 @@ export default function Projects() {
       preview: scribblyImg,
     },
     {
+      title: "Freit Logistics System",
+      description: "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
+      languages: ["React", "Node.js", "MongoDB"],
+      demo: "https://freit-logistics.vercel.app/",
+      code: "https://github.com/Chechep/freit-logistics",
+      preview: freitLogisticsImg,
+    },
+    
+    {
       title: "Inventory Tracker Pro",
       description: "A web-based inventory management system for tracking stock levels, products, and transactions.",
       languages: ["React", "TailwindCSS", "Firebase"],
