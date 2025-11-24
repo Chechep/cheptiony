@@ -6,6 +6,7 @@ import castorImg from "../assets/castor.png";
 import scribblyImg from "../assets/scribbly.png";
 import inventoryImg from "../assets/inventory.png";
 import kejalinkImg from "../assets/kejalink.png";
+import freitImg from "../assets/freit.png";
 
 export default function Projects() {
   const projects = [
@@ -30,7 +31,7 @@ export default function Projects() {
       description: "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
       languages: ["React", "Flask", "Firebase"],
       demo: "https://essense-of-risin.vercel.app/",
-      code: "https://github.com/Chechep/castor-oil-ecommerce",
+      code: "https://github.com/Chechep/castor",
       preview: castorImg,
     },
     {
@@ -45,11 +46,10 @@ export default function Projects() {
       title: "Freit Logistics System",
       description: "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
       languages: ["React", "Node.js", "MongoDB"],
-      demo: "https://freit-logistics.vercel.app/",
-      code: "https://github.com/Chechep/freit-logistics",
+      demo: "https://freit.vercel.app/",
+      code: "https://github.com/Chechep/freit",
       preview: freitImg,
     },
-    
     {
       title: "Inventory Tracker Pro",
       description: "A web-based inventory management system for tracking stock levels, products, and transactions.",
