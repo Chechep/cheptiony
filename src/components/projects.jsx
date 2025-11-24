@@ -29,7 +29,7 @@ export default function Projects() {
       title: "Castor Oil Ecommerce",
       description: "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
       languages: ["React", "Flask", "Firebase"],
-      demo: "https://your-castor-oil-store.vercel.app/",
+      demo: "https://essense-of-risin.vercel.app/",
       code: "https://github.com/Chechep/castor-oil-ecommerce",
       preview: castorImg,
     },
@@ -47,7 +47,7 @@ export default function Projects() {
       languages: ["React", "Node.js", "MongoDB"],
       demo: "https://freit-logistics.vercel.app/",
       code: "https://github.com/Chechep/freit-logistics",
-      preview: freitLogisticsImg,
+      preview: freitImg,
     },
     
     {
