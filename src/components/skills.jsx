@@ -40,7 +40,7 @@ export default function Skills() {
         {skills.map((skill, idx) => (
           <div
             key={idx}
-            className="p-4 flex items-center gap-3 bg-slate-900 rounded-xl shadow hover:shadow-lg transition transform hover:scale-105"
+            className="p-4 flex items-center gap-3 bg-black rounded-xl shadow hover:shadow-lg transition transform hover:scale-105"
           >
             <img src={skill.icon} alt={skill.name} className="w-8 h-8 object-contain" />
             <p className="text-lg font-medium text-slate-200">{skill.name}</p>
