@@ -7,6 +7,7 @@ import scribblyImg from "../assets/scribbly.png";
 import inventoryImg from "../assets/inventory.png";
 import kejalinkImg from "../assets/kejalink.png";
 import freitImg from "../assets/freit.png";
+import smileImg from "../assets/smile.png";
 
 export default function Projects() {
   const projects = [
@@ -19,12 +20,12 @@ export default function Projects() {
       preview: portfolioImg,
     },
     {
-      title: "Communication App",
-      description: "A real-time messaging app with secure chat, channels, and collaboration features.",
-      languages: ["React", "Firebase", "TailwindCSS"],
-      demo: "https://comms-pro.vercel.app/",
-      code: "https://github.com/Chechep/comms",
-      preview: commsImg,
+      title: "Smile",
+      description: "A modern dental clinic website providing appointment booking, services overview, and patient-friendly information to ensure a healthy, confident smile.",
+      languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
+      demo: "https://smile.vercel.app/",
+      code: "https://github.com/Chechep/smile",
+      preview: smileImg,
     },
     {
       title: "Castor Oil Ecommerce",
@@ -35,12 +36,12 @@ export default function Projects() {
       preview: castorImg,
     },
     {
-      title: "Scribbly Blog",
-      description: "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
-      languages: ["React", "TailwindCSS", "Vite"],
-      demo: "https://scribb-ly.vercel.app/",
-      code: "https://github.com/Chechep/scribbly",
-      preview: scribblyImg,
+      title: "Communication App",
+      description: "A real-time messaging app with secure chat, channels, and collaboration features.",
+      languages: ["React", "Firebase", "TailwindCSS"],
+      demo: "https://comms-pro.vercel.app/",
+      code: "https://github.com/Chechep/comms",
+      preview: commsImg,
     },
     {
       title: "Freit Logistics System",
@@ -49,6 +50,14 @@ export default function Projects() {
       demo: "https://freit.vercel.app/",
       code: "https://github.com/Chechep/freit",
       preview: freitImg,
+    },
+    {
+      title: "Scribbly Blog",
+      description: "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
+      languages: ["React", "TailwindCSS", "Vite"],
+      demo: "https://scribb-ly.vercel.app/",
+      code: "https://github.com/Chechep/scribbly",
+      preview: scribblyImg,
     },
     {
       title: "Inventory Tracker Pro",
@@ -71,7 +80,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float">
-      <h2 className="text-4xl font-bold text-center mb-10 text-teal-500">Projects</h2>
+      <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
