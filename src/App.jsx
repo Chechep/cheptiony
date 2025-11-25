@@ -8,7 +8,7 @@ import Starfield from "./components/Starfield";
 export default function App() {
   // Load theme from localStorage or start with WHITE
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || THEMES.WHITE
+    localStorage.getItem("theme") || THEMES.DARK
   );
 
   // Save theme whenever it changes
