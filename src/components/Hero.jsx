@@ -13,7 +13,7 @@ export default function Hero({ theme }) {
 
   // Typing effect
   useEffect(() => {
-    const typingSpeed = 100;
+    const typingSpeed = 200;
     const interval = setInterval(() => {
       const currentName = names[nameIndex];
       if (!deleting) {
@@ -40,18 +40,18 @@ export default function Hero({ theme }) {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  const accent = "text-sky-400 hover:text-sky-600";
+  const accent = "text-teal-500 hover:text-teal-600";
   const buttonPrimary =
-    "bg-sky-600 text-white hover:bg-sky-700 shadow-lg shadow-sky-500/30";
+    "bg-teal-500 text-white hover:bg-teal-700 shadow-lg shadow-sky-500/30";
   const buttonSecondary =
-    "border border-sky-400/70 text-sky-300 hover:bg-sky-500/10";
+    "border border-teal-500/70 text-teal-500 hover:bg-teal-300/10";
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-20 animate-float">
       {/* Name Typing */}
       <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6">
         Get to know{" "}
-        <span className="text-sky-400">
+        <span className="text-teal-500">
           {displayedText}
           <span
             className={`ml-1 inline-block ${
@@ -62,11 +62,13 @@ export default function Hero({ theme }) {
           </span>
         </span>
       </h1>
-
-      {/* Description */}
-      <p className="max-w-2xl text-lg sm:text-xl opacity-80 mb-8">
+      <p className="max-w-2xl text-lg sm:text-xl opacity-80 mb-4">
         Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web
         developer with strong skills in both frontend and backend development.
+      </p>
+      <p className="max-w-2xl text-lg  leading-relaxed mb-8">
+        My focus is on crafting efficient, scalable and user-friendly applications <br />
+        that merge creativity with functionality that solve world problems.
       </p>
 
       {/* CTA Buttons */}

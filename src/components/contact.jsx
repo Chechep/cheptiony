@@ -42,25 +42,26 @@ const Contact = ({ theme }) => {
   };
 
   const cardClasses =
-    theme === THEMES.DARK
-      ? "bg-slate-900 text-white border border-slate-700"
-      : "bg-slate-900/40 text-white border border-sky-500/30 shadow-[0_0_25px_rgba(56,189,248,0.5)]";
+  theme === THEMES.DARK
+    ? "bg-white text-white border-teal-700"
+    : "bg-black text-black border-teal-700";
 
-  const inputClasses = (isTextarea = false) =>
-    `w-full p-3 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-sky-400 placeholder-sky-400 ${
-      theme === THEMES.DARK
-        ? "bg-slate-800/70 text-sky-200"
-        : "bg-slate-900/60 text-sky-200 border border-sky-500/30"
-    } ${isTextarea ? "" : ""}`;
+const inputClasses = (isTextarea = false) =>
+`w-full p-3 rounded-md text-center focus:outline-none focus:ring-1 focus:ring-teal-400 ${
+  theme === THEMES.DARK
+    ? "bg-black text-teal-500 border border-slate-700 placeholder-gray-500"
+    : "bg-white text-black border border-slate-300 placeholder-gray-500"
+} ${isTextarea ? "resize-none" : ""}`;
+
 
   return (
     <section
       id="contact"
-      className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6"
+      className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 animate-float"
     >
       {/* Orbiting Social Icons */}
       <div className="relative w-[300px] h-[300px] mb-8 flex items-center justify-center">
-        <div className="absolute w-[220px] h-[220px] rounded-full border border-sky-500/30"></div>
+        <div className="absolute w-[220px] h-[220px] rounded-full border border-teal-500/30"></div>
         {icons.map((icon, i) => (
           <motion.div
             key={i}
@@ -75,7 +76,7 @@ const Contact = ({ theme }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={`text-3xl hover:scale-125 transition hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.8)] ${
-                theme === THEMES.DARK ? "text-sky-200 hover:text-sky-400" : "text-sky-200 hover:text-sky-400"
+                theme === THEMES.DARK ? "text-teal-500 hover:text-teal-700" : "text-teal-500 hover:text-teal-700"
               }`}
             >
               {icon.component}
@@ -90,7 +91,7 @@ const Contact = ({ theme }) => {
           href={activeIcon.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-sky-600 hover:bg-sky-500 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
+          className="flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-teal-500 hover:bg-teal-700 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
         >
           {activeIcon.component}
           <span>{activeIcon.name}</span>
@@ -99,17 +100,17 @@ const Contact = ({ theme }) => {
 
       {/* Call Button */}
       <div className="text-center mb-12">
-        <p className="text-sky-200 mb-4">Give me a quick call</p>
+        <p className="mb-4">Give me a quick call</p>
         <a
           href="tel:+254790086093"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-sky-600 hover:bg-sky-500 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-teal-500 hover:bg-teal-700 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
         >
           <Phone /> +254 790 086 093
         </a>
       </div>
 
       {/* Contact Form */}
-      <h2 className="text-4xl font-bold text-center mb-10 text-sky-200">
+      <h2 className="text-4xl font-bold text-center mb-10">
         Contact Me
       </h2>
       <div className="w-full max-w-3xl">
@@ -122,7 +123,7 @@ const Contact = ({ theme }) => {
           <textarea name="message" placeholder="Your Message" rows="5" required className={inputClasses(true)} />
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-md font-semibold bg-sky-500 hover:bg-sky-400 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
+            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-md font-semibold bg-teal-500 hover:bg-teal-700 text-white shadow-[0_0_10px_rgba(56,189,248,0.6)]"
           >
             {loading ? <Loader2 className="animate-spin-slow" /> : <Send />}
             {loading ? "Sending..." : "Send Message"}

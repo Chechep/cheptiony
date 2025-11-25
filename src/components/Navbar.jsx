@@ -1,24 +1,37 @@
 import React from "react";
-import { Moon, Star } from "lucide-react";
+import { Sun, Moon, Star } from "lucide-react";
 import { THEMES } from "../theme";
 
 export default function Navbar({ theme, onToggleTheme }) {
   return (
     <nav className="fixed top-0 left-0 w-full z-30">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+
         {/* Theme Toggle */}
         <button
           onClick={onToggleTheme}
-          className="p-2 hover:bg-slate-200/20 transition"
+          className="p-2 rounded-full transition"
           aria-label="Toggle Theme"
         >
-          {theme === THEMES.DARK && (
-            <Moon className="w-6 h-6 text-blue-400" />
-          )}
-          {theme === THEMES.GALAXY && (
-            <Star className="w-6 h-6 text-sky-400" />
-          )}
+          {/* WHITE MODE ICON */}
+          <Sun
+            className={`w-6 h-6 text-black transition-all duration-300 transform
+            ${theme === THEMES.WHITE ? "opacity-100 scale-100" : "opacity-0 scale-75 absolute"}`}
+          />
+
+          {/* GALAXY MODE ICON */}
+          <Star
+            className={`w-6 h-6 text-white transition-all duration-300 transform
+            ${theme === THEMES.GALAXY ? "opacity-100 scale-100" : "opacity-0 scale-75 absolute"}`}
+          />
+
+          {/* DARK MODE ICON */}
+          <Moon
+            className={`w-6 h-6 text-white transition-all duration-300 transform
+            ${theme === THEMES.DARK ? "opacity-100 scale-100" : "opacity-0 scale-75 absolute"}`}
+          />
         </button>
+
       </div>
     </nav>
   );

@@ -32,7 +32,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-20 px-6 max-w-6xl mx-auto relative z-20"
+      className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
     >
       <h2 className="text-4xl font-bold text-center mb-10">Services</h2>
 
@@ -41,7 +41,7 @@ export default function Services() {
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="p-6 bg-slate-800/50 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-sky-500/20"
+            className="p-6 bg-black rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-sky-500/20"
           >
             {/* Main Icon */}
             <div className="mb-4 flex items-center justify-center">

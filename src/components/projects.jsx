@@ -70,13 +70,13 @@ export default function Projects() {
   
 
   return (
-    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20">
-      <h2 className="text-4xl font-bold text-center mb-10 text-white">Projects</h2>
+    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float">
+      <h2 className="text-4xl font-bold text-center mb-10 text-teal-500">Projects</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="p-6 bg-slate-800/50 rounded-xl shadow-lg hover:shadow-purple-500/20 transition transform hover:-translate-y-2"
+            className="p-6 bg-black rounded-xl shadow-lg hover:shadow-purple-500/20 transition transform hover:-translate-y-2"
           >
             {/* Project Preview */}
             {project.preview && (
@@ -113,7 +113,7 @@ export default function Projects() {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-sky-500/20 text-sky-400 rounded-lg hover:bg-sky-500/30 transition"
+                className="flex items-center gap-2 px-4 py-2 bg-sky-500/20 text-teal-400 rounded-lg hover:bg-sky-500/30 transition"
               >
                 <ExternalLink className="w-4 h-4" />
                 Live Demo
@@ -122,7 +122,7 @@ export default function Projects() {
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-slate-700 text-slate-200 rounded-lg hover:bg-slate-600 transition"
+                className="flex items-center gap-2 px-4 py-2 bg-slate-700 text-slate-400 rounded-lg hover:bg-slate-600 transition"
               >
                 <Github className="w-4 h-4" />
                 Code

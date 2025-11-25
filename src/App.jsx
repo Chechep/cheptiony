@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { THEMES } from "./theme";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -6,12 +6,23 @@ import Footer from "./components/Footer";
 import Starfield from "./components/Starfield";
 
 export default function App() {
-  // Start with Galaxy by default
-  const [theme, setTheme] = useState(THEMES.GALAXY);
+  // Load theme from localStorage or start with WHITE
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || THEMES.WHITE
+  );
 
-  // Toggle only between DARK and GALAXY
+  // Save theme whenever it changes
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // Cycle themes
   const cycleTheme = () => {
-    setTheme((prev) => (prev === THEMES.GALAXY ? THEMES.DARK : THEMES.GALAXY));
+    setTheme((prev) => {
+      if (prev === THEMES.WHITE) return THEMES.GALAXY;
+      if (prev === THEMES.GALAXY) return THEMES.DARK;
+      return THEMES.WHITE;
+    });
   };
 
   return (
@@ -19,21 +30,21 @@ export default function App() {
       className={`min-h-screen relative transition-colors duration-500 ${
         theme === THEMES.DARK
           ? "bg-black text-white"
-          : "bg-gradient-to-b from-[#061826] to-[#140a2d] text-white"
+          : theme === THEMES.GALAXY
+          ? "bg-gradient-to-b from-[#061826] to-[#140a2d] text-white"
+          : "bg-white text-black"
       }`}
     >
-      {/* Starfield only for Galaxy/Dark */}
-      <Starfield mode={theme} />
+      {(theme === THEMES.GALAXY || theme === THEMES.DARK) && (
+        <Starfield mode={theme} />
+      )}
 
-      {/* Navbar */}
       <Navbar theme={theme} onToggleTheme={cycleTheme} />
 
-      {/* Main Content */}
       <main className="relative z-20">
         <Home theme={theme} />
       </main>
 
-      {/* Footer */}
       <Footer theme={theme} />
     </div>
   );
