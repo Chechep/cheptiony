@@ -80,10 +80,11 @@ export default function Hero({ theme }) {
           View Projects
         </a>
         <a
-          href="#contact"
+          href="/resume.pdf"
+          download="BrianCheptiony-Resume.pdf"
           className={`px-6 py-3 rounded-full font-medium transition transform hover:scale-105 backdrop-blur ${buttonSecondary}`}
         >
-          Let's Connect
+          Download Resume
         </a>
       </div>
 
