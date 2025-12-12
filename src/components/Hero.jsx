@@ -49,27 +49,30 @@ export default function Hero({ theme }) {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-20 animate-float">
       {/* Name Typing */}
-      <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6">
-        Get to know{" "}
-        <span className="text-teal-500">
-          {displayedText}
-          <span
-            className={`ml-1 inline-block ${
-              showCursor ? "opacity-100" : "opacity-0"
-            } transition-opacity`}
-          >
-            |
-          </span>
-        </span>
-      </h1>
-      <p className="max-w-2xl text-lg sm:text-xl opacity-80 mb-4">
-        Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web
-        developer with strong skills in both frontend and backend development.
-      </p>
-      <p className="max-w-2xl text-lg  leading-relaxed mb-8">
-        My focus is on crafting efficient, scalable and user-friendly applications <br />
-        that merge creativity with functionality that solve world problems.
-      </p>
+      <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6 font-space">
+  Get to know{" "}
+  <span className="text-teal-500">
+    {displayedText}
+    <span
+      className={`ml-1 inline-block ${
+        showCursor ? "opacity-100" : "opacity-0"
+      } transition-opacity`}
+    >
+      |
+    </span>
+  </span>
+</h1>
+
+<p className="max-w-2xl text-lg sm:text-xl opacity-80 mb-4 font-space">
+  Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web
+  developer with strong skills in both frontend and backend development.
+</p>
+
+<p className="max-w-2xl text-lg leading-relaxed mb-8 font-space">
+  My focus is on crafting efficient, scalable and user-friendly applications <br />
+  that merge creativity with functionality that solve world problems.
+</p>
+
 
       {/* CTA Buttons */}
       <div className="flex gap-4 mb-8">

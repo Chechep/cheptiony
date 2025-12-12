@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  THEMES
+} from "../theme";
+
 import HtmlLogo from "../assets/logo/html5.png";
 import CssLogo from "../assets/logo/css3.png";
 import JsLogo from "../assets/logo/javascript.png";
@@ -14,7 +18,7 @@ import SwaggerLogo from "../assets/logo/swagger.png";
 import PostgreSQLLogo from "../assets/logo/postgresql.png";
 import FirebaseLogo from "../assets/logo/firebase.png";
 
-export default function Skills() {
+export default function Skills({ theme }) {
   const skills = [
     { name: "HTML", icon: HtmlLogo },
     { name: "CSS", icon: CssLogo },
@@ -32,18 +36,36 @@ export default function Skills() {
     { name: "Firebase", icon: FirebaseLogo },
   ];
 
+  // THEME LOGIC
+  const isWhite = theme === THEMES.WHITE;
+
+  const cardBg = isWhite ? "bg-white" : "bg-white/10 backdrop-blur-md";
+  const textColor = isWhite ? "text-black" : "text-black";
+  const cardShadow = isWhite ? "shadow-md" : "shadow-lg";
+
   return (
-    <section id="skills" className="py-20 px-6 max-w-5xl mx-auto relative z-20 animate-float">
-      <h2 className="text-4xl font-bold text-center mb-10">Expertise</h2>
+    <section
+      id="skills"
+      className="py-20 px-6 max-w-5xl mx-auto relative z-20 animate-float"
+    >
+      <h2 className={`text-4xl font-bold text-center mb-10 ${textColor}`}>
+        Expertise
+      </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {skills.map((skill, idx) => (
           <div
             key={idx}
-            className="p-4 flex items-center gap-3 bg-black rounded-xl shadow hover:shadow-lg transition transform hover:scale-105"
+            className={`p-4 flex items-center gap-3 
+              ${cardBg} ${textColor} ${cardShadow}
+              rounded-xl transition transform hover:scale-105`}
           >
-            <img src={skill.icon} alt={skill.name} className="w-8 h-8 object-contain" />
-            <p className="text-lg font-medium text-slate-200">{skill.name}</p>
+            <img
+              src={skill.icon}
+              alt={skill.name}
+              className="w-8 h-8 object-contain"
+            />
+            <p className="text-lg font-medium">{skill.name}</p>
           </div>
         ))}
       </div>

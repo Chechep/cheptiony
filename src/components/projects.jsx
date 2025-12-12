@@ -1,5 +1,7 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
+import { THEMES } from "../theme";
+
 import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
 import castorImg from "../assets/castor.png";
@@ -9,19 +11,12 @@ import kejalinkImg from "../assets/kejalink.png";
 import freitImg from "../assets/freit.png";
 import smileImg from "../assets/smile.png";
 
-export default function Projects() {
+export default function Projects({ theme }) {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "A personal site showcasing my projects, skills, and experiences.",
-      languages: ["React", "TailwindCSS", "Vite"],
-      demo: "https://cheptiony.vercel.app/",
-      code: "https://github.com/Chechep/cheptiony",
-      preview: portfolioImg,
-    },
-    {
       title: "Smile",
-      description: "A modern dental clinic website providing appointment booking, services overview, and patient-friendly information to ensure a healthy, confident smile.",
+      description:
+        "A modern dental clinic website providing appointment booking, services overview, and patient-friendly information to ensure a healthy, confident smile.",
       languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
       demo: "https://smile.vercel.app/",
       code: "https://github.com/Chechep/smile",
@@ -29,7 +24,8 @@ export default function Projects() {
     },
     {
       title: "Castor Oil Ecommerce",
-      description: "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
+      description:
+        "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
       languages: ["React", "Flask", "Firebase"],
       demo: "https://essense-of-risin.vercel.app/",
       code: "https://github.com/Chechep/castor",
@@ -37,7 +33,8 @@ export default function Projects() {
     },
     {
       title: "Communication App",
-      description: "A real-time messaging app with secure chat, channels, and collaboration features.",
+      description:
+        "A real-time messaging app with secure chat, channels, and collaboration features.",
       languages: ["React", "Firebase", "TailwindCSS"],
       demo: "https://comms-pro.vercel.app/",
       code: "https://github.com/Chechep/comms",
@@ -45,7 +42,8 @@ export default function Projects() {
     },
     {
       title: "Freit Logistics System",
-      description: "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
+      description:
+        "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
       languages: ["React", "Node.js", "MongoDB"],
       demo: "https://freit.vercel.app/",
       code: "https://github.com/Chechep/freit",
@@ -53,7 +51,8 @@ export default function Projects() {
     },
     {
       title: "Scribbly Blog",
-      description: "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
+      description:
+        "A lightweight CRUD blogging platform built to create, read, update, and delete posts.",
       languages: ["React", "TailwindCSS", "Vite"],
       demo: "https://scribb-ly.vercel.app/",
       code: "https://github.com/Chechep/scribbly",
@@ -61,7 +60,8 @@ export default function Projects() {
     },
     {
       title: "Inventory Tracker Pro",
-      description: "A web-based inventory management system for tracking stock levels, products, and transactions.",
+      description:
+        "A web-based inventory management system for tracking stock levels, products, and transactions.",
       languages: ["React", "TailwindCSS", "Firebase"],
       demo: "https://inventory-tracker-pro.vercel.app/",
       code: "https://github.com/Chechep/inventory-tracker-pro",
@@ -69,23 +69,35 @@ export default function Projects() {
     },
     {
       title: "KejaLink",
-      description: "A modern property management and rent payment platform connecting tenants and landlords with ease.",
+      description:
+        "A modern property management and rent payment platform connecting tenants and landlords with ease.",
       languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
       demo: "https://keja-link.vercel.app/",
       code: "https://github.com/Chechep/Kejani",
       preview: kejalinkImg,
     },
   ];
-  
+
+  const isWhite = theme === THEMES.WHITE;
+  const cardBg = isWhite ? "bg-white" : "bg-white";
+  const titleColor = isWhite ? "text-black" : "text-black";
+  const descColor = isWhite ? "text-gray-800" : "text-gray-800";
+  const badgeBg = isWhite ? "bg-gray-500 text-black" : "bg-slate-700 text-slate-200";
+  const cardShadow = isWhite ? "shadow-md" : "shadow-lg";
 
   return (
-    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float">
-      <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
+    <section
+      id="projects"
+      className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
+    >
+      <h2 className={`text-4xl font-bold text-center mb-10 ${titleColor}`}>
+        Projects
+      </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="p-6 bg-black rounded-xl shadow-lg hover:shadow-purple-500/20 transition transform hover:-translate-y-2"
+            className={`p-6 rounded-xl transition transform hover:-translate-y-2 ${cardBg} ${cardShadow}`}
           >
             {/* Project Preview */}
             {project.preview && (
@@ -99,17 +111,19 @@ export default function Projects() {
             )}
 
             {/* Title */}
-            <h3 className="text-2xl font-semibold mb-3 text-white">{project.title}</h3>
+            <h3 className={`text-2xl font-semibold mb-3 text-center ${titleColor}`}>
+              {project.title}
+            </h3>
 
             {/* Description */}
-            <p className="text-slate-300 mb-4">{project.description}</p>
+            <p className={`text-center mb-4 ${descColor}`}>{project.description}</p>
 
             {/* Languages */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-4 justify-center">
               {project.languages.map((lang, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-sm bg-slate-700 text-slate-200 rounded-full"
+                  className={`px-3 py-1 text-sm rounded-full ${badgeBg}`}
                 >
                   {lang}
                 </span>
@@ -117,12 +131,16 @@ export default function Projects() {
             </div>
 
             {/* Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-sky-500/20 text-teal-400 rounded-lg hover:bg-sky-500/30 transition"
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
+                  isWhite
+                    ? "bg-sky-500/10 text-gray-500 hover:bg-gray-500/20"
+                    : "bg-sky-500/20 text-teal-400 hover:bg-sky-500/30"
+                }`}
               >
                 <ExternalLink className="w-4 h-4" />
                 Live Demo
@@ -131,7 +149,11 @@ export default function Projects() {
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-slate-700 text-slate-400 rounded-lg hover:bg-slate-600 transition"
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
+                  isWhite
+                    ? "bg-gray-200 text-black hover:bg-gray-300"
+                    : "bg-slate-700 text-slate-400 hover:bg-slate-600"
+                }`}
               >
                 <Github className="w-4 h-4" />
                 Code

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        space: ["Space Grotesk", "sans-serif"],
+      },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },

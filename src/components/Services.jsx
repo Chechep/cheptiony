@@ -1,7 +1,8 @@
 import React from "react";
 import { Smartphone, Globe, Server, Database } from "lucide-react";
+import { THEMES } from "../theme";
 
-export default function Services() {
+export default function Services({ theme }) {
   const services = [
     {
       title: "Mobile App Development",
@@ -29,32 +30,39 @@ export default function Services() {
     },
   ];
 
+  const isWhite = theme === THEMES.WHITE;
+  const cardBg = isWhite ? "bg-white" : "bg-white";
+  const titleColor = isWhite ? "text-black" : "text-black";
+  const descColor = isWhite ? "text-gray-800" : "text-gray-800";
+  const cardShadow = isWhite ? "shadow-md" : "shadow-lg";
+
   return (
     <section
       id="services"
       className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
     >
-      <h2 className="text-4xl font-bold text-center mb-10">Services</h2>
+      <h2 className={`text-4xl font-bold text-center mb-10 ${titleColor}`}>
+        Services
+      </h2>
 
-      {/* 2x2 Grid Layout */}
       <div className="grid md:grid-cols-2 gap-8">
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="p-6 bg-black rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-sky-500/20"
+            className={`p-6 rounded-xl transition transform hover:scale-105 ${cardBg} ${cardShadow}`}
           >
-            {/* Main Icon */}
+            {/* Icon */}
             <div className="mb-4 flex items-center justify-center">
               {service.icon}
             </div>
 
             {/* Title */}
-            <h3 className="text-2xl font-semibold mb-3 text-white text-center">
+            <h3 className={`text-2xl font-semibold mb-3 text-center ${titleColor}`}>
               {service.title}
             </h3>
 
             {/* Description */}
-            <p className="text-slate-300 text-center">{service.description}</p>
+            <p className={`text-center ${descColor}`}>{service.description}</p>
           </div>
         ))}
       </div>

@@ -21,13 +21,13 @@ export default function Navbar({ theme, onToggleTheme }) {
 
           {/* GALAXY MODE ICON */}
           <Star
-            className={`w-6 h-6 text-white transition-all duration-300 transform
+            className={`w-6 h-6 text-gray-300 transition-all duration-300 transform
             ${theme === THEMES.GALAXY ? "opacity-100 scale-100" : "opacity-0 scale-75 absolute"}`}
           />
 
           {/* DARK MODE ICON */}
           <Moon
-            className={`w-6 h-6 text-white transition-all duration-300 transform
+            className={`w-6 h-6 text-gray-403 transition-all duration-300 transform
             ${theme === THEMES.DARK ? "opacity-100 scale-100" : "opacity-0 scale-75 absolute"}`}
           />
         </button>
