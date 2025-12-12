@@ -1,8 +1,6 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { THEMES } from "../theme";
-
-import portfolioImg from "../assets/portfolio.png";
 import commsImg from "../assets/comms-pro.png";
 import castorImg from "../assets/castor.png";
 import scribblyImg from "../assets/scribbly.png";
