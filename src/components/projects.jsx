@@ -76,11 +76,7 @@ export default function Projects({ theme }) {
       id="projects"
       className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
     >
-      <h2
-        className={`text-4xl font-bold text-center mb-10 ${
-          isWhite ? "text-black" : "text-black"
-        }`}
-      >
+      <h2 className="text-4xl font-bold text-center mb-10 text-black">
         Projects
       </h2>
 
