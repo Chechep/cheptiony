@@ -1,13 +1,6 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { THEMES } from "../theme";
-import commsImg from "../assets/comms-pro.png";
-import castorImg from "../assets/castor.png";
-import scribblyImg from "../assets/scribbly.png";
-import inventoryImg from "../assets/inventory.png";
-import kejalinkImg from "../assets/kejalink.png";
-import freitImg from "../assets/freit.png";
-import smileImg from "../assets/smile.png";
 
 export default function Projects({ theme }) {
   const projects = [
@@ -18,7 +11,7 @@ export default function Projects({ theme }) {
       languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
       demo: "https://smile.vercel.app/",
       code: "https://github.com/Chechep/smile",
-      preview: smileImg,
+      preview: "/smile.png",
     },
     {
       title: "Castor Oil Ecommerce",
@@ -27,7 +20,7 @@ export default function Projects({ theme }) {
       languages: ["React", "Flask", "Firebase"],
       demo: "https://essense-of-risin.vercel.app/",
       code: "https://github.com/Chechep/castor",
-      preview: castorImg,
+      preview: "/castor.png",
     },
     {
       title: "Communication App",
@@ -36,7 +29,7 @@ export default function Projects({ theme }) {
       languages: ["React", "Firebase", "TailwindCSS"],
       demo: "https://comms-pro.vercel.app/",
       code: "https://github.com/Chechep/comms",
-      preview: commsImg,
+      preview: "/comms-pro.png",
     },
     {
       title: "Freit Logistics System",
@@ -45,7 +38,7 @@ export default function Projects({ theme }) {
       languages: ["React", "Node.js", "MongoDB"],
       demo: "https://freit.vercel.app/",
       code: "https://github.com/Chechep/freit",
-      preview: freitImg,
+      preview: "/freit.png",
     },
     {
       title: "Scribbly Blog",
@@ -54,7 +47,7 @@ export default function Projects({ theme }) {
       languages: ["React", "TailwindCSS", "Vite"],
       demo: "https://scribb-ly.vercel.app/",
       code: "https://github.com/Chechep/scribbly",
-      preview: scribblyImg,
+      preview: "/scribbly.png",
     },
     {
       title: "Inventory Tracker Pro",
@@ -63,7 +56,7 @@ export default function Projects({ theme }) {
       languages: ["React", "TailwindCSS", "Firebase"],
       demo: "https://inventory-tracker-pro.vercel.app/",
       code: "https://github.com/Chechep/inventory-tracker-pro",
-      preview: inventoryImg,
+      preview: "/inventory.png",
     },
     {
       title: "KejaLink",
@@ -72,32 +65,34 @@ export default function Projects({ theme }) {
       languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
       demo: "https://keja-link.vercel.app/",
       code: "https://github.com/Chechep/Kejani",
-      preview: kejalinkImg,
+      preview: "/kejalink.png",
     },
   ];
 
   const isWhite = theme === THEMES.WHITE;
-  const cardBg = isWhite ? "bg-white" : "bg-white";
-  const titleColor = isWhite ? "text-black" : "text-black";
-  const descColor = isWhite ? "text-gray-800" : "text-gray-800";
-  const badgeBg = isWhite ? "bg-gray-500 text-black" : "bg-slate-700 text-slate-200";
-  const cardShadow = isWhite ? "shadow-md" : "shadow-lg";
 
   return (
     <section
       id="projects"
       className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
     >
-      <h2 className={`text-4xl font-bold text-center mb-10 ${titleColor}`}>
+      <h2
+        className={`text-4xl font-bold text-center mb-10 ${
+          isWhite ? "text-black" : "text-black"
+        }`}
+      >
         Projects
       </h2>
+
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className={`p-6 rounded-xl transition transform hover:-translate-y-2 ${cardBg} ${cardShadow}`}
+            className={`p-6 rounded-xl transition transform hover:-translate-y-2 ${
+              isWhite ? "bg-white shadow-md" : "bg-white shadow-lg"
+            }`}
           >
-            {/* Project Preview */}
+            {/* Preview */}
             {project.preview && (
               <a href={project.demo} target="_blank" rel="noopener noreferrer">
                 <img
@@ -109,19 +104,25 @@ export default function Projects({ theme }) {
             )}
 
             {/* Title */}
-            <h3 className={`text-2xl font-semibold mb-3 text-center ${titleColor}`}>
+            <h3 className="text-2xl font-semibold mb-3 text-center text-black">
               {project.title}
             </h3>
 
             {/* Description */}
-            <p className={`text-center mb-4 ${descColor}`}>{project.description}</p>
+            <p className="text-center mb-4 text-gray-800">
+              {project.description}
+            </p>
 
-            {/* Languages */}
+            {/* Tech Stack */}
             <div className="flex flex-wrap gap-2 mb-4 justify-center">
               {project.languages.map((lang, i) => (
                 <span
                   key={i}
-                  className={`px-3 py-1 text-sm rounded-full ${badgeBg}`}
+                  className={`px-3 py-1 text-sm rounded-full ${
+                    isWhite
+                      ? "bg-gray-500 text-black"
+                      : "bg-slate-700 text-slate-200"
+                  }`}
                 >
                   {lang}
                 </span>
@@ -143,6 +144,7 @@ export default function Projects({ theme }) {
                 <ExternalLink className="w-4 h-4" />
                 Live Demo
               </a>
+
               <a
                 href={project.code}
                 target="_blank"
