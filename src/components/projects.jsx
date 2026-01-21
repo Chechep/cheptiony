@@ -50,15 +50,6 @@ export default function Projects({ theme }) {
       preview: "/scribbly.png",
     },
     {
-      title: "Inventory Tracker Pro",
-      description:
-        "A web-based inventory management system for tracking stock levels, products, and transactions.",
-      languages: ["React", "TailwindCSS", "Firebase"],
-      demo: "https://inventory-tracker-pro.vercel.app/",
-      code: "https://github.com/Chechep/inventory-tracker-pro",
-      preview: "/inventory.png",
-    },
-    {
       title: "KejaLink",
       description:
         "A modern property management and rent payment platform connecting tenants and landlords with ease.",
