@@ -49,11 +49,11 @@ export default function Contact() {
         "9ecYH6LPP5bIj5OMT"
       )
       .then(() => {
-        setToast({ message: "Message sent successfully ✅", type: "success" });
+        setToast({ message: "Message sent successfully", type: "success" });
         e.target.reset();
       })
       .catch(() => {
-        setToast({ message: "Something went wrong ❌", type: "error" });
+        setToast({ message: "Something went wrong", type: "error" });
       })
       .finally(() => setLoading(false));
   };
@@ -61,17 +61,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6"
     >
       {/* Orbiting Social Icons */}
-      <div className="relative w-[300px] h-[300px] mb-8 flex items-center justify-center">
-        <div className="absolute w-[320px] h-[320px]" />
-
+      <div className="relative w-[300px] h-[300px] mb-10 flex items-center justify-center animate-float">
         {icons.map((icon, i) => (
           <motion.div
             key={i}
             drag
-            dragConstraints={{ left: -50, right: 50, top: -50, bottom: 50 }}
+            dragConstraints={{ left: -40, right: 40, top: -40, bottom: 40 }}
             className="absolute top-1/2 left-1/2 animate-orbit"
             style={{ animationDelay: icon.delay }}
             onAnimationIteration={() => setActiveIcon(icon)}
@@ -81,9 +79,8 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="
-                text-3xl transition hover:scale-125
-                text-teal-500 hover:text-teal-700
-                hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.8)]
+                text-3xl text-teal-500 hover:text-teal-600
+                transition transform hover:scale-125
               "
             >
               {icon.component}
@@ -93,15 +90,17 @@ export default function Contact() {
       </div>
 
       {/* Active Button */}
-      <div className="mb-12">
+      <div className="mb-12 animate-float [animation-delay:1s]">
         <a
           href={activeIcon.href}
           target="_blank"
           rel="noopener noreferrer"
           className="
             flex items-center gap-2 px-6 py-3 rounded-full font-medium
-            bg-teal-500 hover:bg-teal-700 text-white
-            shadow-[0_0_10px_rgba(56,189,248,0.6)]
+            bg-teal-500/90 text-white
+            backdrop-blur-md
+            shadow-xl shadow-teal-500/30
+            transition transform hover:scale-105 hover:-translate-y-1
           "
         >
           {activeIcon.component}
@@ -110,28 +109,34 @@ export default function Contact() {
       </div>
 
       {/* Call Button */}
-      <div className="text-center mb-12">
-        <p className="mb-4">Give me a quick call</p>
+      <div className="text-center mb-14 animate-float [animation-delay:2s]">
+        <p className="mb-4 opacity-80">Give me a quick call</p>
         <a
           href="tel:+254790086093"
           className="
             inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium
-            bg-teal-500 hover:bg-teal-700 text-white
-            shadow-[0_0_10px_rgba(56,189,248,0.6)]
+            bg-teal-500/90 text-white
+            backdrop-blur-md
+            shadow-xl shadow-teal-500/30
+            transition transform hover:scale-105 hover:-translate-y-1
           "
         >
           <Phone /> +254 790 086 093
         </a>
       </div>
 
-      {/* Contact Form */}
-      <div className="w-full max-w-3xl">
+      {/* Floating Contact Form */}
+      <div className="w-full max-w-3xl animate-float [animation-duration:8s]">
         <form
           onSubmit={sendEmail}
           className="
-            p-6 rounded-xl space-y-4 backdrop-blur-md transition-all
-            bg-white text-black shadow-md border border-slate-300
-            dark:bg-black dark:text-white dark:border dark:border-slate-500 dark:shadow-lg
+            p-8 rounded-2xl space-y-4
+            backdrop-blur-xl
+            bg-white/80 text-black
+            dark:bg-black/70 dark:text-white
+            border border-white/30 dark:border-slate-600
+            shadow-2xl shadow-teal-500/10
+            transition transform hover:-translate-y-1
           "
         >
           <input
@@ -141,9 +146,9 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center
-              bg-white text-black border border-slate-400
-              dark:bg-black dark:text-teal-400 dark:border-slate-700
-              placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
+              bg-white/90 dark:bg-black/70
+              border border-slate-300 dark:border-slate-700
+              focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
 
@@ -154,9 +159,9 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center
-              bg-white text-black border border-slate-400
-              dark:bg-black dark:text-teal-400 dark:border-slate-700
-              placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
+              bg-white/90 dark:bg-black/70
+              border border-slate-300 dark:border-slate-700
+              focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
 
@@ -167,9 +172,9 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center resize-none
-              bg-white text-black border border-slate-400
-              dark:bg-black dark:text-teal-400 dark:border-slate-700
-              placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
+              bg-white/90 dark:bg-black/70
+              border border-slate-300 dark:border-slate-700
+              focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
 
@@ -178,8 +183,9 @@ export default function Contact() {
             disabled={loading}
             className="
               w-full flex items-center justify-center gap-2 py-3 px-6 rounded-md font-semibold
-              bg-teal-500 hover:bg-teal-700 text-white
-              shadow-[0_0_10px_rgba(56,189,248,0.6)]
+              bg-teal-500 text-white
+              shadow-xl shadow-teal-500/30
+              transition transform hover:scale-105
             "
           >
             {loading ? <Loader2 className="animate-spin" /> : <Send />}
@@ -188,7 +194,6 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* Toast */}
       {toast && (
         <Toast
           message={toast.message}

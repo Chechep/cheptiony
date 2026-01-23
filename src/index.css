@@ -5,3 +5,8 @@
 body {
   @apply font-space;
 }
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}
