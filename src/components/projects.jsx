@@ -132,7 +132,7 @@ export default function Projects() {
                 "
               >
                 <ExternalLink className="w-4 h-4" />
-                 Demo
+                 Website
               </a>
 
               <a
