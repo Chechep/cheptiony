@@ -43,8 +43,8 @@ export default function Services() {
             key={idx}
             className="
               p-6 rounded-xl transition transform hover:scale-105
-              bg-white text-black shadow-md
-              dark:bg-gray-900 dark:text-white dark:shadow-lg
+              bg-white text-black shadow-md 
+              dark:bg-black dark:text-white dark:shadow-lg
             "
           >
             {/* Icon */}
