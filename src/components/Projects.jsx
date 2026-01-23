@@ -6,19 +6,28 @@ export default function Projects() {
       title: "Smile",
       description:
         "A modern dental clinic website providing appointment booking, services overview, and patient-friendly information to ensure a healthy, confident smile.",
-      languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
-      demo: "https://smile.vercel.app/",
+      languages: ["React", "Firebase"],
+      demo: "https://smile-pro.vercel.app/",
       code: "https://github.com/Chechep/smile",
       preview: "/smile.png",
     },
     {
-      title: "Castor Oil Ecommerce",
+      title: "Essense of Risin",
       description:
         "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
       languages: ["React", "Flask", "Firebase"],
       demo: "https://essense-of-risin.vercel.app/",
       code: "https://github.com/Chechep/castor",
       preview: "/castor.png",
+    },
+    {
+      title: "Freit Logistics System",
+      description:
+        "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
+      languages: ["React", "Node.js"],
+      demo: "https://freit.vercel.app/",
+      code: "https://github.com/Chechep/freit",
+      preview: "/freit.png",
     },
     {
       title: "Communication App",
@@ -28,15 +37,6 @@ export default function Projects() {
       demo: "https://comms-pro.vercel.app/",
       code: "https://github.com/Chechep/comms",
       preview: "/comms-pro.png",
-    },
-    {
-      title: "Freit Logistics System",
-      description:
-        "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
-      languages: ["React", "Node.js", "MongoDB"],
-      demo: "https://freit.vercel.app/",
-      code: "https://github.com/Chechep/freit",
-      preview: "/freit.png",
     },
     {
       title: "Scribbly Blog",
