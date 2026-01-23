@@ -33,9 +33,7 @@ export default function Services() {
       id="services"
       className="py-20 px-6 max-w-6xl mx-auto relative z-20"
     >
-      <h2 className="text-4xl font-bold text-center mb-10">
-        Services
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-10">Services</h2>
 
       <div className="grid md:grid-cols-2 gap-8">
         {services.map((service, idx) => (
@@ -43,14 +41,14 @@ export default function Services() {
             key={idx}
             className="
               p-6 rounded-xl transition transform hover:scale-105
-              bg-white text-black shadow-md 
-              dark:bg-black dark:text-white dark:shadow-lg
+              bg-white/20 backdrop-blur-lg text-black
+              dark:bg-black/20 dark:text-white
+              shadow-md shadow-black/20 dark:shadow-white/10
+              animate-float [animation-duration:6s]
             "
           >
             {/* Icon */}
-            <div className="mb-4 flex justify-center">
-              {service.icon}
-            </div>
+            <div className="mb-4 flex justify-center">{service.icon}</div>
 
             {/* Title */}
             <h3 className="text-2xl font-semibold mb-3 text-center">

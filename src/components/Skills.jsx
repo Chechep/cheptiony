@@ -1,5 +1,4 @@
 import React from "react";
-import { THEMES } from "../theme";
 
 import HtmlLogo from "../assets/logo/html5.png";
 import CssLogo from "../assets/logo/css3.png";
@@ -39,18 +38,21 @@ export default function Skills() {
       id="skills"
       className="py-20 px-6 max-w-5xl mx-auto relative z-20"
     >
-      <h2 className="text-4xl font-bold text-center mb-10">
-        Expertise
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-10">Expertise</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {skills.map((skill, idx) => (
           <div
             key={idx}
-            className="p-4 flex items-center gap-3 rounded-xl
-                       bg-white text-black shadow-md
-                       dark:bg-black dark:text-white dark:shadow-lg border border-slate-300 dark:border-slate-700
-                       transition transform hover:scale-105"
+            className="
+              p-4 flex items-center gap-3 rounded-xl
+              bg-white/20 backdrop-blur-lg text-black
+              dark:bg-black/20 dark:text-white
+              border border-white/30 dark:border-slate-700
+              shadow-md shadow-black/20 dark:shadow-white/10
+              transition transform hover:scale-105
+              animate-float [animation-duration:6s]
+            "
           >
             <img
               src={skill.icon}
@@ -64,4 +66,3 @@ export default function Skills() {
     </section>
   );
 }
-

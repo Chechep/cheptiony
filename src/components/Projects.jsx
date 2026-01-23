@@ -63,18 +63,17 @@ export default function Projects() {
       id="projects"
       className="py-20 px-6 max-w-6xl mx-auto relative z-20"
     >
-      <h2 className="text-4xl font-bold text-center mb-10">
-        Projects
-      </h2>
+      <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
 
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
             className="
-              p-6 rounded-xl transition transform hover:-translate-y-2
+              p-6 rounded-xl transition transform
               bg-white text-black shadow-md border border-slate-300 shadow-black/30
               dark:bg-black dark:text-white dark:shadow-lg dark:border-slate-800 dark:shadow-white/20
+              animate-float [animation-duration:7s] hover:-translate-y-2
             "
           >
             {/* Preview */}
@@ -132,7 +131,7 @@ export default function Projects() {
                 "
               >
                 <ExternalLink className="w-4 h-4" />
-                 Website
+                Website
               </a>
 
               <a
