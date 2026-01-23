@@ -125,17 +125,13 @@ export default function Contact() {
       </div>
 
       {/* Contact Form */}
-      <h2 className="text-4xl font-bold text-center mb-10">
-        Contact Me
-      </h2>
-
       <div className="w-full max-w-3xl">
         <form
           onSubmit={sendEmail}
           className="
             p-6 rounded-xl space-y-4 backdrop-blur-md transition-all
-            bg-white text-black shadow-md
-            dark:bg-black dark:text-white dark:border dark:border-slate-700 dark:shadow-lg
+            bg-white text-black shadow-md border border-slate-300
+            dark:bg-black dark:text-white dark:border dark:border-slate-500 dark:shadow-lg
           "
         >
           <input
@@ -145,7 +141,7 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center
-              bg-white text-black border border-slate-300
+              bg-white text-black border border-slate-400
               dark:bg-black dark:text-teal-400 dark:border-slate-700
               placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
             "
@@ -158,7 +154,7 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center
-              bg-white text-black border border-slate-300
+              bg-white text-black border border-slate-400
               dark:bg-black dark:text-teal-400 dark:border-slate-700
               placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
             "
@@ -171,7 +167,7 @@ export default function Contact() {
             required
             className="
               w-full p-3 rounded-md text-center resize-none
-              bg-white text-black border border-slate-300
+              bg-white text-black border border-slate-400
               dark:bg-black dark:text-teal-400 dark:border-slate-700
               placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-400
             "

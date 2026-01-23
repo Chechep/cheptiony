@@ -49,7 +49,7 @@ export default function Skills() {
             key={idx}
             className="p-4 flex items-center gap-3 rounded-xl
                        bg-white text-black shadow-md
-                       dark:bg-gray-900 dark:text-white dark:shadow-lg
+                       dark:bg-black dark:text-white dark:shadow-lg border border-slate-300 dark:border-slate-700
                        transition transform hover:scale-105"
           >
             <img

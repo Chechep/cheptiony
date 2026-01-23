@@ -73,8 +73,8 @@ export default function Projects() {
             key={idx}
             className="
               p-6 rounded-xl transition transform hover:-translate-y-2
-              bg-white text-black shadow-md
-              dark:bg-gray-900 dark:text-white dark:shadow-lg
+              bg-white text-black shadow-md border border-slate-300 shadow-black/30
+              dark:bg-black dark:text-white dark:shadow-lg dark:border-slate-800 dark:shadow-white/20
             "
           >
             {/* Preview */}
