@@ -65,7 +65,7 @@ export default function Contact() {
     >
       {/* Orbiting Social Icons */}
       <div className="relative w-[300px] h-[300px] mb-8 flex items-center justify-center">
-        <div className="absolute w-[220px] h-[220px] rounded-full border border-teal-500/30" />
+        <div className="absolute w-[320px] h-[320px]" />
 
         {icons.map((icon, i) => (
           <motion.div

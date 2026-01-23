@@ -12,7 +12,7 @@ export default {
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-12px)" },
         },
         orbit: {
           "0%": { transform: "rotate(0deg) translateX(110px) rotate(0deg)" },

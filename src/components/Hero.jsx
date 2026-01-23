@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-export default function Hero() {
+export default function Home() {
   const names = ["Brian", "Cheptiony"];
   const [displayedText, setDisplayedText] = useState("");
   const [nameIndex, setNameIndex] = useState(0);
@@ -10,9 +10,9 @@ export default function Hero() {
   const [deleting, setDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 
-  /* Typing effect */
+  /* Typing Effect */
   useEffect(() => {
-    const typingSpeed = 200;
+    const typingSpeed = 180;
 
     const interval = setInterval(() => {
       const currentName = names[nameIndex];
@@ -38,7 +38,7 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [letterIndex, deleting, nameIndex]);
 
-  /* Cursor blink */
+  /* Cursor Blink */
   useEffect(() => {
     const cursorInterval = setInterval(
       () => setShowCursor((prev) => !prev),
@@ -48,110 +48,103 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-20">
-      {/* Name Typing */}
-      <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6 font-space">
-        Get to know{" "}
-        <span className="text-teal-500">
-          {displayedText}
-          <span
-            className={`ml-1 inline-block transition-opacity ${
-              showCursor ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            |
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+
+      {/* Floating Content */}
+      <div className="relative z-20 flex flex-col items-center text-center animate-float [animation-duration:7s]">
+
+        {/* Title */}
+        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6 font-space">
+          Get to know{" "}
+          <span className="text-teal-500">
+            {displayedText}
+            <span
+              className={`ml-1 inline-block transition-opacity ${
+                showCursor ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              |
+            </span>
           </span>
-        </span>
-      </h1>
+        </h1>
 
-      <p className="max-w-2xl text-lg sm:text-xl opacity-80 mb-4 font-space">
-        Based in Nairobi, Kenya, I am a passionate and dedicated full-stack web
-        developer with strong skills in both frontend and backend development.
-      </p>
+        {/* Description */}
+        <p className="max-w-xl text-lg sm:text-xl opacity-80 mb-8 font-space">
+          Based in Nairobi, Kenya, I am a passionate full-stack developer with
+          skills equiped to build scalable, efficient and user-friendly applications
+          that solve real-world problems.
+        </p>
 
-      <p className="max-w-2xl text-lg leading-relaxed mb-8 font-space">
-        My focus is on crafting efficient, scalable and user-friendly
-        applications <br />
-        that merge creativity with functionality to solve real-world problems.
-      </p>
+        {/* CTA Buttons */}
+        <div className="flex gap-4 mb-10">
+          <a
+            href="#projects"
+            className="
+              px-6 py-3 rounded-full font-medium
+              bg-teal-500/90 text-white
+              backdrop-blur-md
+              shadow-xl shadow-teal-500/30
+              transition transform hover:scale-105 hover:-translate-y-1
+            "
+          >
+            View Projects
+          </a>
 
-      {/* CTA Buttons */}
-      <div className="flex gap-4 mb-8">
-        <a
-          href="#projects"
-          className="
-            px-6 py-3 rounded-full font-medium transition transform hover:scale-105
-            bg-teal-500 hover:bg-teal-700 text-white
-            shadow-lg shadow-sky-500/30 backdrop-blur
-          "
-        >
-          View Projects
-        </a>
+          <a
+            href="/resume.pdf"
+            download="BrianCheptiony-Resume.pdf"
+            className="
+              px-6 py-3 rounded-full font-medium
+              border border-teal-500/70 text-teal-500
+              backdrop-blur-md
+              shadow-lg shadow-teal-500/10
+              transition transform hover:scale-105 hover:-translate-y-1
+            "
+          >
+            Download Resume
+          </a>
+        </div>
 
-        <a
-          href="/resume.pdf"
-          download="BrianCheptiony-Resume.pdf"
-          className="
-            px-6 py-3 rounded-full font-medium transition transform hover:scale-105
-            border border-teal-500/70 text-teal-500
-            hover:bg-teal-300/10 backdrop-blur
-          "
-        >
-          Download Resume
-        </a>
-      </div>
+        {/* Social Icons */}
+        <div className="flex gap-8 justify-center">
+          <a
+            href="https://wa.me/254790086093"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-3xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp />
+          </a>
 
-      {/* Social Icons */}
-      <div className="flex gap-6 justify-center">
-        <a
-          href="https://wa.me/254790086093"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            text-3xl transition transform hover:scale-125
-            text-teal-500 hover:text-teal-600
-          "
-          aria-label="WhatsApp"
-        >
-          <FaWhatsapp />
-        </a>
+          <a
+            href="mailto:cheptiony6@gmail.com"
+            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:1s]"
+            aria-label="Email"
+          >
+            <Mail />
+          </a>
 
-        <a
-          href="mailto:cheptiony6@gmail.com"
-          className="
-            text-2xl transition transform hover:scale-125
-            text-teal-500 hover:text-teal-600
-          "
-          aria-label="Email"
-        >
-          <Mail />
-        </a>
+          <a
+            href="https://github.com/Chechep"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:2s]"
+            aria-label="GitHub"
+          >
+            <Github />
+          </a>
 
-        <a
-          href="https://github.com/Chechep"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            text-2xl transition transform hover:scale-125
-            text-teal-500 hover:text-teal-600
-          "
-          aria-label="GitHub"
-        >
-          <Github />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/cheptiony"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            text-2xl transition transform hover:scale-125
-            text-teal-500 hover:text-teal-600
-          "
-          aria-label="LinkedIn"
-        >
-          <Linkedin />
-        </a>
+          <a
+            href="https://linkedin.com/in/cheptiony"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:3s]"
+            aria-label="LinkedIn"
+          >
+            <Linkedin />
+          </a>
+        </div>
       </div>
     </section>
   );
