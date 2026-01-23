@@ -3,23 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Cheptiony - software developer" />
+    <meta name="keywords" content="cheptiony, software, app, web application, development" />
+    <meta name="author" content="Cheptiony" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cheptiony" />
+    <meta property="og:description" content="Cheptiony - software developer" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cheptiony" />
+    <meta name="twitter:description" content="Cheptiony - software developer" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Font -->
     <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon (Teal-500: #14b8a6) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314b8a6'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Cheptiony" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="msapplication-navbutton-color" content="#121212" />
+    
+    <!-- Apple Touch Icon (Teal-500) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314b8a6'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Safari Pinned Tab -->
+    <link
+      rel="mask-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314b8a6'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='white'%3EC%3C/text%3E%3C/svg%3E"
+      color="#14b8a6"
+    />
+
     <title>Cheptiony</title>
+
+    <!-- Optimized Theme Script -->
     <script>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      (function() {
+        const theme = localStorage.theme;
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        
+        if (theme === "dark" || (!theme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
     </script>
   </head>
+
   <body class="bg-white dark:bg-[#121212]">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
