@@ -1,9 +1,9 @@
 import React from "react";
-import Hero from "../components/Hero.jsx";
-import Projects from "../components/Projects.jsx";
-import Contact from "../components/Contact.jsx";
-import Skills from "../components/Skills.jsx";
-import Services from "../components/Services.jsx";
+import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Skills from "../components/Skills";
+import Services from "../components/Services";
 
 export default function Home() {
   return (
