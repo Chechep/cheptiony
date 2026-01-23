@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class", // or 'media' if you want to use the system's dark mode setting
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    // Add other paths if necessary
   ],
   theme: {
     extend: {
@@ -16,7 +17,9 @@ export default {
         },
         orbit: {
           "0%": { transform: "rotate(0deg) translateX(110px) rotate(0deg)" },
-          "100%": { transform: "rotate(360deg) translateX(110px) rotate(-360deg)" },
+          "100%": {
+            transform: "rotate(360deg) translateX(110px) rotate(-360deg)",
+          },
         },
         "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
@@ -32,6 +35,5 @@ export default {
       },
     },
   },
-  darkMode: "class",
   plugins: [],
 };

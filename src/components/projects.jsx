@@ -1,8 +1,6 @@
-import React from "react";
 import { ExternalLink, Github } from "lucide-react";
-import { THEMES } from "../theme";
 
-export default function Projects({ theme }) {
+export default function Projects() {
   const projects = [
     {
       title: "Smile",
@@ -60,14 +58,12 @@ export default function Projects({ theme }) {
     },
   ];
 
-  const isWhite = theme === THEMES.WHITE;
-
   return (
     <section
       id="projects"
-      className="py-20 px-6 max-w-6xl mx-auto relative z-20 animate-float"
+      className="py-20 px-6 max-w-6xl mx-auto relative z-20"
     >
-      <h2 className="text-4xl font-bold text-center mb-10 text-black">
+      <h2 className="text-4xl font-bold text-center mb-10">
         Projects
       </h2>
 
@@ -75,28 +71,35 @@ export default function Projects({ theme }) {
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className={`p-6 rounded-xl transition transform hover:-translate-y-2 ${
-              isWhite ? "bg-white shadow-md" : "bg-white shadow-lg"
-            }`}
+            className="
+              p-6 rounded-xl transition transform hover:-translate-y-2
+              bg-white text-black shadow-md
+              dark:bg-gray-900 dark:text-white dark:shadow-lg
+            "
           >
             {/* Preview */}
             {project.preview && (
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src={project.preview}
                   alt={`${project.title} preview`}
-                  className="w-full h-40 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105"
+                  className="w-full h-40 object-cover rounded-lg mb-4
+                             transition-transform duration-300 hover:scale-105"
                 />
               </a>
             )}
 
             {/* Title */}
-            <h3 className="text-2xl font-semibold mb-3 text-center text-black">
+            <h3 className="text-2xl font-semibold mb-3 text-center">
               {project.title}
             </h3>
 
             {/* Description */}
-            <p className="text-center mb-4 text-gray-800">
+            <p className="text-center mb-4 text-gray-700 dark:text-gray-300">
               {project.description}
             </p>
 
@@ -105,11 +108,11 @@ export default function Projects({ theme }) {
               {project.languages.map((lang, i) => (
                 <span
                   key={i}
-                  className={`px-3 py-1 text-sm rounded-full ${
-                    isWhite
-                      ? "bg-gray-500 text-black"
-                      : "bg-slate-700 text-slate-200"
-                  }`}
+                  className="
+                    px-3 py-1 text-sm rounded-full
+                    bg-gray-200 text-gray-800
+                    dark:bg-slate-700 dark:text-slate-200
+                  "
                 >
                   {lang}
                 </span>
@@ -122,25 +125,25 @@ export default function Projects({ theme }) {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
-                  isWhite
-                    ? "bg-sky-500/10 text-gray-500 hover:bg-gray-500/20"
-                    : "bg-sky-500/20 text-teal-400 hover:bg-sky-500/30"
-                }`}
+                className="
+                  flex items-center gap-2 px-4 py-2 rounded-lg transition
+                  bg-sky-500/10 text-sky-600 hover:bg-sky-500/20
+                  dark:bg-sky-500/20 dark:text-teal-400 dark:hover:bg-sky-500/30
+                "
               >
                 <ExternalLink className="w-4 h-4" />
-                Live Demo
+                 Demo
               </a>
 
               <a
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
-                  isWhite
-                    ? "bg-gray-200 text-black hover:bg-gray-300"
-                    : "bg-slate-700 text-slate-400 hover:bg-slate-600"
-                }`}
+                className="
+                  flex items-center gap-2 px-4 py-2 rounded-lg transition
+                  bg-gray-200 text-gray-900 hover:bg-gray-300
+                  dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-black
+                "
               >
                 <Github className="w-4 h-4" />
                 Code

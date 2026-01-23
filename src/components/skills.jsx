@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  THEMES
-} from "../theme";
+import { THEMES } from "../theme";
 
 import HtmlLogo from "../assets/logo/html5.png";
 import CssLogo from "../assets/logo/css3.png";
@@ -18,7 +16,7 @@ import SwaggerLogo from "../assets/logo/swagger.png";
 import PostgreSQLLogo from "../assets/logo/postgresql.png";
 import FirebaseLogo from "../assets/logo/firebase.png";
 
-export default function Skills({ theme }) {
+export default function Skills() {
   const skills = [
     { name: "HTML", icon: HtmlLogo },
     { name: "CSS", icon: CssLogo },
@@ -31,24 +29,17 @@ export default function Skills({ theme }) {
     { name: "Tailwind CSS", icon: TailwindLogo },
     { name: "Git", icon: GitLogo },
     { name: "GraphQL", icon: GraphQLLogo },
-    { name: "RESTful APIs", icon: SwaggerLogo },
+    { name: "REST APIs", icon: SwaggerLogo },
     { name: "PostgreSQL", icon: PostgreSQLLogo },
     { name: "Firebase", icon: FirebaseLogo },
   ];
 
-  // THEME LOGIC
-  const isWhite = theme === THEMES.WHITE;
-
-  const cardBg = isWhite ? "bg-white" : "bg-white/10 backdrop-blur-md";
-  const textColor = isWhite ? "text-black" : "text-black";
-  const cardShadow = isWhite ? "shadow-md" : "shadow-lg";
-
   return (
     <section
       id="skills"
-      className="py-20 px-6 max-w-5xl mx-auto relative z-20 animate-float"
+      className="py-20 px-6 max-w-5xl mx-auto relative z-20"
     >
-      <h2 className={`text-4xl font-bold text-center mb-10 ${textColor}`}>
+      <h2 className="text-4xl font-bold text-center mb-10">
         Expertise
       </h2>
 
@@ -56,9 +47,10 @@ export default function Skills({ theme }) {
         {skills.map((skill, idx) => (
           <div
             key={idx}
-            className={`p-4 flex items-center gap-3 
-              ${cardBg} ${textColor} ${cardShadow}
-              rounded-xl transition transform hover:scale-105`}
+            className="p-4 flex items-center gap-3 rounded-xl
+                       bg-white text-black shadow-md
+                       dark:bg-gray-900 dark:text-white dark:shadow-lg
+                       transition transform hover:scale-105"
           >
             <img
               src={skill.icon}
@@ -72,3 +64,4 @@ export default function Skills({ theme }) {
     </section>
   );
 }
+

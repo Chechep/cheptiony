@@ -1,51 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { THEMES } from "./theme";
+import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Starfield from "./components/Starfield";
 
 export default function App() {
-  // Load theme from localStorage or start with WHITE
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || THEMES.DARK
+  const [dark, setDark] = useState(
+    localStorage.getItem("theme") === "dark"
   );
 
-  // Save theme whenever it changes
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    const root = document.documentElement;
 
-  // Cycle themes
-  const cycleTheme = () => {
-    setTheme((prev) => {
-      if (prev === THEMES.WHITE) return THEMES.GALAXY;
-      if (prev === THEMES.GALAXY) return THEMES.DARK;
-      return THEMES.WHITE;
-    });
-  };
+    if (dark) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
   return (
-    <div
-      className={`min-h-screen relative transition-colors duration-500 ${
-        theme === THEMES.DARK
-          ? "bg-black text-white"
-          : theme === THEMES.GALAXY
-          ? "bg-gradient-to-b from-[#061826] to-[#140a2d] text-white"
-          : "bg-white text-black"
-      }`}
-    >
-      {(theme === THEMES.GALAXY || theme === THEMES.DARK) && (
-        <Starfield mode={theme} />
-      )}
+    <div className="min-h-screen relative bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+      {/* Only visible in dark mode */}
+      <Starfield />
 
-      <Navbar theme={theme} onToggleTheme={cycleTheme} />
+      <Navbar dark={dark} setDark={setDark} />
 
       <main className="relative z-20">
-        <Home theme={theme} />
+        <Home />
       </main>
 
-      <Footer theme={theme} />
+      <Footer />
     </div>
   );
 }
