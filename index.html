@@ -6,19 +6,28 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Cheptiony - software developer" />
-    <meta name="keywords" content="cheptiony, software, app, web application, development" />
+    <meta
+      name="keywords"
+      content="cheptiony, software, app, web application, development"
+    />
     <meta name="author" content="Cheptiony" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Cheptiony" />
-    <meta property="og:description" content="Cheptiony - software developer" />
+    <meta
+      property="og:description"
+      content="Cheptiony - software developer"
+    />
     <meta property="og:image" content="/og-image.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cheptiony" />
-    <meta name="twitter:description" content="Cheptiony - software developer" />
+    <meta
+      name="twitter:description"
+      content="Cheptiony - software developer"
+    />
     <meta name="twitter:image" content="/og-image.png" />
 
     <!-- Font -->
@@ -36,15 +45,28 @@
 
     <!-- PWA Configuration -->
     <link rel="manifest" href="/manifest.json" />
+
     <meta name="theme-color" content="#121212" />
-    <meta name="msapplication-TileColor" content="#121212" />
+
+    <!-- Modern PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Apple PWA -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta name="apple-mobile-web-app-title" content="Cheptiony" />
+
+    <!-- Windows -->
     <meta name="msapplication-TileColor" content="#121212" />
-    <meta name="msapplication-navbutton-color" content="#121212" />
-    
-    <!-- Apple Touch Icon (Teal-500) -->
+    <meta
+      name="msapplication-navbutton-color"
+      content="#121212"
+    />
+
+    <!-- Apple Touch Icon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -62,10 +84,12 @@
 
     <!-- Optimized Theme Script -->
     <script>
-      (function() {
+      (function () {
         const theme = localStorage.theme;
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
         if (theme === "dark" || (!theme && prefersDark)) {
           document.documentElement.classList.add("dark");
         }
@@ -75,6 +99,7 @@
 
   <body class="bg-white dark:bg-[#121212]">
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
