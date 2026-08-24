@@ -3,19 +3,10 @@ import { ExternalLink, Github } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      title: "Smile",
-      description:
-        "A modern dental clinic website providing appointment booking, services overview, and patient-friendly information to ensure a healthy, confident smile.",
-      languages: ["React", "Firebase"],
-      demo: "https://smile-pro.vercel.app/",
-      code: "https://github.com/Chechep/smile",
-      preview: "/smile.png",
-    },
-    {
       title: "Essense of Risin",
       description:
         "A modern ecommerce platform for selling premium castor oil products with secure checkout and smooth user experience.",
-      languages: ["React", "Flask", "Firebase"],
+      languages: ["React", "Flask", "Firebase", "PostgreSQL"],
       demo: "https://essense-of-risin.vercel.app/",
       code: "https://github.com/Chechep/castor",
       preview: "/castor.png",
@@ -24,7 +15,7 @@ export default function Projects() {
       title: "Freit Logistics System",
       description:
         "A full logistics and freight management platform for tracking shipments, managing deliveries, and handling client orders in real time.",
-      languages: ["React", "Node.js"],
+      languages: ["React", "Firebase"],
       demo: "https://freit.vercel.app/",
       code: "https://github.com/Chechep/freit",
       preview: "/freit.png",
@@ -46,15 +37,6 @@ export default function Projects() {
       demo: "https://scribb-ly.vercel.app/",
       code: "https://github.com/Chechep/scribbly",
       preview: "/scribbly.png",
-    },
-    {
-      title: "KejaLink",
-      description:
-        "A modern property management and rent payment platform connecting tenants and landlords with ease.",
-      languages: ["React", "TailwindCSS", "Firebase", "Framer Motion"],
-      demo: "https://keja-link.vercel.app/",
-      code: "https://github.com/Chechep/Kejani",
-      preview: "/kejalink.png",
     },
   ];
 

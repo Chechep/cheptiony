@@ -12,9 +12,9 @@ export default function Navbar({ dark, setDark }) {
           aria-label="Toggle theme"
         >
           {dark ? (
-            <Sun className="w-6 h-6 text-teal-500" />
+            <Sun className="w-4 h-4 text-teal-700" />
           ) : (
-            <Moon className="w-6 h-6 text-teal-500" />
+            <Moon className="w-4 h-4 text-teal-500" />
           )}
         </motion.button>
       </div>

@@ -134,7 +134,7 @@ export default function Contact() {
             backdrop-blur-xl
             bg-white/80 text-black
             dark:bg-black/70 dark:text-white
-            border border-white/30 dark:border-slate-600
+            border border-white/30 dark:border-slate-800
             shadow-2xl shadow-teal-500/10
             transition transform hover:-translate-y-1
           "
@@ -147,7 +147,7 @@ export default function Contact() {
             className="
               w-full p-3 rounded-md text-center
               bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-700
+              border border-slate-300 dark:border-slate-800
               focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
@@ -160,7 +160,7 @@ export default function Contact() {
             className="
               w-full p-3 rounded-md text-center
               bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-700
+              border border-slate-300 dark:border-slate-800
               focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
@@ -173,7 +173,7 @@ export default function Contact() {
             className="
               w-full p-3 rounded-md text-center resize-none
               bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-700
+              border border-slate-300 dark:border-slate-800
               focus:outline-none focus:ring-1 focus:ring-teal-400
             "
           />
