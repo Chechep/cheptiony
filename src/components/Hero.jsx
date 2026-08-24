@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
   const names = ["Brian", "Cheptiony"];
@@ -54,7 +54,7 @@ export default function Home() {
       <div className="relative z-20 flex flex-col items-center text-center animate-float [animation-duration:7s]">
 
         {/* Title */}
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6 font-space">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 font-space">
           Get to know{" "}
           <span className="text-teal-500">
             {displayedText}
@@ -69,7 +69,7 @@ export default function Home() {
         </h1>
 
         {/* Description */}
-        <p className="max-w-xl text-lg sm:text-xl opacity-80 mb-8 font-space">
+        <p className="max-w-xl opacity-80 mb-8 font-space">
           Based in Nairobi, Kenya, I am a passionate full-stack developer with
           skills equiped to build scalable, efficient and user-friendly applications
           that solve real-world problems.
@@ -111,7 +111,7 @@ export default function Home() {
             href="https://wa.me/254790086093"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float"
+            className="text-3xl text-teal-500 hover:text-green-600 transition transform hover:scale-125 animate-float"
             aria-label="WhatsApp"
           >
             <FaWhatsapp />
@@ -119,7 +119,7 @@ export default function Home() {
 
           <a
             href="mailto:cheptiony6@gmail.com"
-            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:1s]"
+            className="text-2xl text-teal-500 hover:text-red-600 transition transform hover:scale-125 animate-float [animation-delay:1s]"
             aria-label="Email"
           >
             <Mail />
@@ -129,7 +129,7 @@ export default function Home() {
             href="https://github.com/Chechep"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:2s]"
+            className="text-2xl text-teal-500 hover:text-black dark:hover:text-white transition transform hover:scale-125 animate-float [animation-delay:2s]"
             aria-label="GitHub"
           >
             <Github />
@@ -139,10 +139,18 @@ export default function Home() {
             href="https://linkedin.com/in/cheptiony"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-teal-500 hover:text-teal-600 transition transform hover:scale-125 animate-float [animation-delay:3s]"
+            className="text-2xl text-teal-500 hover:text-sky-500 transition transform hover:scale-125 animate-float [animation-delay:3s]"
             aria-label="LinkedIn"
           >
             <Linkedin />
+          </a>
+
+          <a href="https://twitter.com/_cheptiony_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-teal-500 hover:text-sky-400 transition transform hover:scale-125 animate-float [animation-delay:4s]"
+            aria-label="Twitter">
+            <FaTwitter />
           </a>
         </div>
       </div>
