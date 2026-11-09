@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, Phone, Send, Loader2 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import Toast from "./Toast";
 
@@ -32,32 +32,23 @@ const icons = [
   },
 ];
 
-// Read once at module level
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID;
 
 export default function Contact() {
-  const [loading, setLoading] = useState(false);
+  const [state, handleSubmit, reset] = useForm(FORMSPREE_FORM_ID);
   const [activeIcon, setActiveIcon] = useState(icons[0]);
   const [toast, setToast] = useState(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then(() => {
-        setToast({ message: "Message sent successfully", type: "success" });
-        e.target.reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS error:", error);
-        setToast({ message: "Something went wrong", type: "error" });
-      })
-      .finally(() => setLoading(false));
-  };
+  // Show toast on success / error and auto-reset form
+  useEffect(() => {
+    if (state.succeeded) {
+      setToast({ message: "Message sent successfully", type: "success" });
+      reset();
+    }
+    if (state.errors && state.errors.length > 0) {
+      setToast({ message: "Something went wrong", type: "error" });
+    }
+  }, [state.succeeded, state.errors, reset]);
 
   return (
     <section
@@ -129,7 +120,7 @@ export default function Contact() {
       {/* Floating Contact Form */}
       <div className="w-full max-w-3xl animate-float [animation-duration:8s]">
         <form
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           className="
             p-8 rounded-2xl space-y-4
             backdrop-blur-xl
@@ -140,57 +131,82 @@ export default function Contact() {
             transition transform hover:-translate-y-1
           "
         >
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Your Name"
-            required
-            className="
-              w-full p-3 rounded-md text-center
-              bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-800
-              focus:outline-none focus:ring-1 focus:ring-teal-400
-            "
-          />
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              className="
+                w-full p-3 rounded-md text-center
+                bg-white/90 dark:bg-black/70
+                border border-slate-300 dark:border-slate-800
+                focus:outline-none focus:ring-1 focus:ring-teal-400
+              "
+            />
+            <ValidationError
+              prefix="Name"
+              field="name"
+              errors={state.errors}
+              className="text-red-500 text-xs mt-1 block text-center"
+            />
+          </div>
 
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Your Email"
-            required
-            className="
-              w-full p-3 rounded-md text-center
-              bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-800
-              focus:outline-none focus:ring-1 focus:ring-teal-400
-            "
-          />
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              className="
+                w-full p-3 rounded-md text-center
+                bg-white/90 dark:bg-black/70
+                border border-slate-300 dark:border-slate-800
+                focus:outline-none focus:ring-1 focus:ring-teal-400
+              "
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+              className="text-red-500 text-xs mt-1 block text-center"
+            />
+          </div>
 
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            required
-            className="
-              w-full p-3 rounded-md text-center resize-none
-              bg-white/90 dark:bg-black/70
-              border border-slate-300 dark:border-slate-800
-              focus:outline-none focus:ring-1 focus:ring-teal-400
-            "
-          />
+          <div>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+              className="
+                w-full p-3 rounded-md text-center resize-none
+                bg-white/90 dark:bg-black/70
+                border border-slate-300 dark:border-slate-800
+                focus:outline-none focus:ring-1 focus:ring-teal-400
+              "
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+              className="text-red-500 text-xs mt-1 block text-center"
+            />
+          </div>
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={state.submitting}
             className="
               w-full flex items-center justify-center gap-2 py-3 px-6 rounded-md font-semibold
               bg-teal-500 text-white
               shadow-xl shadow-teal-500/30
               transition transform hover:scale-105
+              disabled:opacity-70 disabled:cursor-not-allowed
             "
           >
-            {loading ? <Loader2 className="animate-spin" /> : <Send />}
-            {loading ? "Sending..." : "Send Message"}
+            {state.submitting ? <Loader2 className="animate-spin" /> : <Send />}
+            {state.submitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
