@@ -32,6 +32,11 @@ const icons = [
   },
 ];
 
+// Read once at module level
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [activeIcon, setActiveIcon] = useState(icons[0]);
@@ -42,17 +47,13 @@ export default function Contact() {
     setLoading(true);
 
     emailjs
-      .sendForm(
-        "service_qlo57hg",
-        "template_wrgr2gl",
-        e.target,
-        "9ecYH6LPP5bIj5OMT"
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then(() => {
         setToast({ message: "Message sent successfully", type: "success" });
         e.target.reset();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("EmailJS error:", error);
         setToast({ message: "Something went wrong", type: "error" });
       })
       .finally(() => setLoading(false));
